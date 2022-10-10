@@ -1,4 +1,4 @@
-# Windows 11 Guide
+# Dual Boot Post Install Win/Mac/Linux
 Few guides for getting around Windows 11 
 
 ## Without Internet Connection Bypass
