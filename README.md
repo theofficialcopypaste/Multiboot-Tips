@@ -1,4 +1,4 @@
-# Multiboot Post Install (Mac, Windows & Linux)
+# Multiboot Tips & Tricks
 
 Multiboot Post Install for Hackintosh
 
