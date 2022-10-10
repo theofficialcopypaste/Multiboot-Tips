@@ -1,4 +1,4 @@
-# Multiboot Tips & Tricks
+# Multiboot Tips
 
 Multiboot Post Install for Hackintosh
 
