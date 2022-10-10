@@ -14,7 +14,7 @@ Multiboot Post Install for Hackintosh
 
 3. Type `sudo vifs` on mac terminal
 4. Press **o** to edit **/etc/fstab**
-5. Add `UUID="Volume UUID" none ntfs rw,noauto`. Below is an example:
+5. Add `UUID="Volume UUID" none ntfs rw,noauto`. Below is an **example**:
 
    <img width="585" alt="2022-10-11_04-37-31" src="https://user-images.githubusercontent.com/72515939/194951551-cf586ede-7bea-424d-8d4c-bea7ba118267.png">
 
