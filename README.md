@@ -13,7 +13,8 @@ Multiboot Post Install for Hackintosh
 1. Open **Disk Utility** \ **Info**
 2. Find **File System UUID** and copy target value.
 
-   <img width="1100" alt="2022-10-11_04-53-09" src="https://user-images.githubusercontent.com/72515939/194950823-9918e211-aad4-49bc-a964-298efd20eb07.png">
+   <img width="1100" alt="2022-10-11_15-21-37" src="https://user-images.githubusercontent.com/72515939/195022152-7a28b29f-8433-4f2b-b3ba-65a1b487cb3a.png">
+
    <img width="669" alt="2022-10-11_04-51-31" src="https://user-images.githubusercontent.com/72515939/194950887-fb8b0de2-eec9-4872-9223-a49d55d96e1e.png">
 
 3. Type `sudo vifs` on mac terminal
