@@ -32,7 +32,7 @@ Multiboot Post Install for Hackintosh
 
 ### Introduction:
 
-<div align="justify">Some people who <strong>dual-boot</strong> Hackintosh Macs with Linux may experience issues with the <strong>EFI labels</strong> being <strong>unidentified</strong> using <strong>OpenCanopy.efi</strong>. That would be, <strong>NO NAME</strong>.  It is annoying. The solution guided is not the best way. However, it is useful when all else labeling method fails. Recommended to use the <strong>official method</strong> first:</div>
+<div align="justify">Certain <strong>dual-boot</strong> Hackintosh Macs with Linux users may experience issues with the <strong>EFI labels</strong> being <strong>unidentified</strong> using <strong>OpenCanopy.efi</strong>. That would be, <strong>NO NAME</strong>.  It is annoying. The solution guided is not the best way. However, it is useful when all else labeling method fails. Recommended to use the <strong>official method</strong> first:</div>
 <br>
 
 -  [Dualbooting with Linux](https://dortania.github.io/OpenCore-Multiboot/oc/linux.html)
