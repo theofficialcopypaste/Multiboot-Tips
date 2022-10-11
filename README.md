@@ -2,7 +2,7 @@
 
 Multiboot Post Install for Hackintosh
 
-## Auto unmount Windows volume on Mac
+## Automatically unmount Windows Partition and Volume on Mac
 
 ### Recommended Method:
 
