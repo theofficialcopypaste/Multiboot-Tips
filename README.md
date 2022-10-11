@@ -4,6 +4,10 @@ Multiboot Post Install for Hackintosh
 
 ## Automatically unmount Windows Partition and Volume on Mac
 
+### Introduction:
+
+<div align="justify">This method <strong>prevents</strong> the <strong>Windows partition</strong> from<strong> mounting automatically</strong> on the <strong>Mac</strong>. It is <strong>advised</strong> to decrease power consumption. The fact that the <strong>NTFS</strong> partition is mounted <strong>automatically</strong> by an unsupport operating system will result in <strong>storage corruption</strong> and probably could <strong>reduce</strong> storage&#39;s <strong>lifespan</strong>.</div>
+
 ### Recommended Method:
 
 1. Open **Disk Utility**/**Info**
@@ -28,14 +32,15 @@ Multiboot Post Install for Hackintosh
 
 ### Introduction:
 
-Some people who **dual-boot** Hackintosh Macs with Linux may experience issues with the **EFI labels** being **unidentified** using **OpenCanopy.efi**. That would be, **NO NAME**.  It is annoying. The solution that will be put out is not the solution I suggest. However, it is useful when all else fails. I, recommend to use the **official method** first:
+<div align="justify">Some people who <strong>dual-boot</strong> Hackintosh Macs with Linux may experience issues with the <strong>EFI labels</strong> being <strong>unidentified</strong> using <strong>OpenCanopy.efi</strong>. That would be, <strong>NO NAME</strong>.  It is annoying. The solution that will be put out is not the solution I suggest. However, it is useful when all else fails. I, recommend to use the <strong>official method</strong> first:</div>
+<br>
 
 -  [Dualbooting with Linux](https://dortania.github.io/OpenCore-Multiboot/oc/linux.html)
 
 ### Method:
 
-1. Boot on **Linux**
-2. Check Linux **EFI partition** path. i.e; **/dev/sdaX**
+1. Boot to **Linux**
+2. Check Linux **EFI partition** path. i.e; **/dev/sdaX** (visually using GParted)
 3. Open **Terminal** and use `fatlabel`, `device path` and `new_label`. 
 
    Example are as below:
