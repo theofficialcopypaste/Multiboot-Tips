@@ -10,7 +10,7 @@ Multiboot Post Install for Hackintosh
 
 ### Recommended Method:
 
-1. Open **Disk Utility**/**Info**
+1. Open **Disk Utility** \ **Info**
 2. Find **File System UUID** and copy target value.
 
    <img width="1100" alt="2022-10-11_04-53-09" src="https://user-images.githubusercontent.com/72515939/194950823-9918e211-aad4-49bc-a964-298efd20eb07.png">
