@@ -21,3 +21,34 @@ Multiboot Post Install for Hackintosh
 6. Press **Esc** to stop editing and press **Shift + ZZ** to exit **vifs**
 7. Type `sudo automount -vc` to **reset** auto mounter
 8. Restart PC.
+
+---
+
+## NO_NAME issues on Linux 
+
+### Introduction:
+
+Some people who **dual-boot** Hackintosh Macs with Linux may experience issues with the **EFI labels** being **unidentified** using **OpenCanopy.efi**. That would be, **NO NAME**.  It is annoying. The solution that will be put out is not the solution I suggest. However, it is useful when all else fails. I, recommend to use the **official method** first:
+
+-  [Dualbooting with Linux](https://dortania.github.io/OpenCore-Multiboot/oc/linux.html)
+
+### Method:
+
+1. Boot on **Linux**
+2. Check Linux **EFI partition** path. i.e; **/dev/sdaX**
+3. Open **Terminal** and use `fatlabel`, `device path` and `new_label`. 
+
+   Example are as below:
+   
+   ```zsh
+   sudo fatlabel /dev/sdaX new_label
+   ```
+   
+   Complete example:
+   
+   ```zsh
+   sudo fatlabel /dev/sda1 Arch
+   ```
+4. Press Enter, close Terminal and **Restart**
+
+**Note:** Please do not use this method on **Windows**. 
