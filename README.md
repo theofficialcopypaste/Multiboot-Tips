@@ -41,7 +41,7 @@ Multiboot Post Install for Hackintosh
 
 1. Boot to **Linux**
 2. Check Linux **EFI partition** path. i.e; **/dev/sdaX** (visually using GParted)
-3. Open **Terminal** and use superuser do `sudo`, `fatlabel`, `device path` and `new_label`. 
+3. Open **Terminal** and use `sudo`, `fatlabel`, `device path` and `new_label`. 
 
    Example are as below:
    
