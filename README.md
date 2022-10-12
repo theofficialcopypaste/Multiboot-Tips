@@ -10,10 +10,10 @@ Multiboot Post Install for Hackintosh
 
 ### What is vifs?
 
-*  Name: vifs 
-*  Purpose: safely edit fstab
-*  Description:
-Originates from Mac OSX 10.5. The vifs utility simply locks the fstab file before invoking an editor on it.  This is important to facilitate the modification of fstab by automated tools and system management software. Always use vifs to edit fstab, instead of invoking an editor directly.
+* **Name:** vifs 
+*  **Purpose:** safely edit fstab
+*  **Description:**
+Originates from Mac **OSX 10.5**. The **vifs utility** simply locks the fstab file before invoking an editor on it.  This is important to facilitate the modification of fstab by automated tools and system management software. Always use **vifs** to edit fstab, instead of invoking an editor directly.
 
 ### Recommended Method:
 
