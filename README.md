@@ -6,7 +6,14 @@ Multiboot Post Install for Hackintosh
 
 ### Introduction:
 
-<div align="justify">This method <strong>prevents</strong> the <strong>Windows partition</strong> from<strong> mounting automatically</strong> on the <strong>Mac</strong>. It is <strong>advised</strong> to decrease power consumption. The fact that the <strong>NTFS</strong> partition is mounted <strong>automatically</strong> by an unsupport operating system will results <strong>storage corruption</strong> and probably could <strong>reduce</strong> storage&#39;s <strong>lifespan</strong>. Normally, Linux partition such as ext4, btrfs, zfs and etc is not mounted automatically.</div>
+<div align="justify">This method <strong>prevents</strong> the <strong>Windows partition</strong> from<strong> mounting automatically</strong> on the <strong>Mac</strong>. It is <strong>advised</strong> to decrease power consumption. The fact that the <strong>NTFS</strong> partition is mounted <strong>automatically</strong> by an unsupport operating system will results <strong>storage corruption</strong> and probably could <strong>reduce</strong> storage&#39;s <strong>lifespan</strong>. Normally, Linux partition such as ext4, btrfs, zfs and etc is not mounted automatically. In macOS, we use <strong>vifs</strong> to editing configurated file.</div>
+
+### What is vifs?
+
+*  Name: vifs 
+*  Purpose: safely edit fstab
+*  Description:
+Originates from Mac OSX 10.5. The vifs utility simply locks the fstab file before invoking an editor on it.  This is important to facilitate the modification of fstab by automated tools and system management software. Always use vifs to edit fstab, instead of invoking an editor directly.
 
 ### Recommended Method:
 
