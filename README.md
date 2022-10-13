@@ -41,7 +41,7 @@ Multiboot Post Install for Hackintosh
 
 ### Introduction:
 
-   <img width="680" alt="Screen Shot 2022-10-11 at 4 21 53 PM" src="https://user-images.githubusercontent.com/72515939/195038554-cf87909a-28cd-43a5-9bfb-4664b6ad92a5.png">
+   <img width="500" alt="UTC (1)" src="https://user-images.githubusercontent.com/72515939/195477379-9e45ff8b-76a4-47c3-b229-058faeb2f584.png">
 
 <div align="justify">Certain <strong>dual-boot</strong> Hackintosh Macs with Linux users may experience issues with the <strong>EFI labels</strong> being <strong>unidentified</strong> using <strong>OpenCanopy.efi</strong>. That would be, <strong>NO NAME</strong>.  It is annoying. The solution guided is not the best way. However, it is useful when all else labeling method fails. Recommended to use the <strong>official method</strong> first:</div>
 
