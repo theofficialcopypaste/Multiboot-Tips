@@ -91,7 +91,7 @@ Today, it is most appropriate to use and refer to time based on UTC and not on G
 
 #### How do I fix this?
 
-**Manual Method (credit to [SwampFox82](https://www.tonymacx86.com/members/swampfox82.1100433/))**
+##### Manual Method (credit to [SwampFox82](https://www.tonymacx86.com/members/swampfox82.1100433/))
 
 <div align="justify">It's quite simple really. All you need to do is set Windows to use UTC instead of GMT. To do this - we need to perform a simple registry edit. Go perform this - hold down the <strong>Windows</strong> button, and at the same time press <strong>R (Win + R)</strong>. This will bring up a new window titled <strong>Run</strong>. In this window type the command <strong>regedit</strong>. <strong>UAC</strong> will popup asking for admin permission. Click accept and the registry editor will open. Now that were in regedit, navigate to:</div>
 
@@ -107,7 +107,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
   
 **Reboot**, and sync the windows clock - now your time settings will be universal.
 
-**Auto Method (Require [Hackintool](https://github.com/headkaze/Hackintool))**
+##### Auto Method (Require [Hackintool](https://github.com/headkaze/Hackintool))
 
 1. Boot to **macOS**
 2. Open Hackintool, Find **Utilities**
