@@ -95,7 +95,11 @@ Today, it is most appropriate to use and refer to time based on UTC and not on G
 
 <div align="justify">It's quite simple really. All you need to do is set Windows to use UTC instead of GMT. To do this - we need to perform a simple registry edit. Go perform this - hold down the <strong>Windows</strong> button, and at the same time press <strong>R (Win + R)</strong>. This will bring up a new window titled <strong>Run</strong>. In this window type the command <strong>regedit</strong>. <strong>UAC</strong> will popup asking for admin permission. Click accept and the registry editor will open. Now that were in regedit, navigate to:</div>
 
-`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]`
+<br>
+
+```cmd
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+```
 
 <div align="justify">Left click on <strong>TimeZoneInformation</strong> and on the left it will display all the current values attributed to this registry key. On the left right click anywhere and choose <strong>Create new D-WORD</strong>. You will now see a new entry at the bottom of the list.</div>  
   
