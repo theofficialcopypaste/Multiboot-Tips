@@ -116,8 +116,8 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
    <img width="1000" alt="2022-10-11_04-37-31" src="https://user-images.githubusercontent.com/72515939/195476048-4f47ea41-da62-4b4b-97fd-68d5bba38b15.png">
 
 3. Click on Below-Center icon to generate `reg` file, called **WinUTCOff.reg** and **WinUTCOn.reg**
-	1. **WinUTCOff.reg** is to **disable** UTC registry patch
-	2. **WinUTCOn.reg** is to **enable** UTC registry patch
+	1. [**WinUTCOff.reg**](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOff.reg) is to **disable** UTC registry patch
+	2. [**WinUTCOn.reg**](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOn.reg) is to **enable** UTC registry patch
 	
    <br>
    <img width="1125" alt="2022-10-13_09-03-23" src="https://user-images.githubusercontent.com/72515939/195476891-bd985cdb-3565-49c8-9fc8-ec53c1305c50.png">
