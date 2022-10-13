@@ -40,10 +40,12 @@ The command "vifs" is a utility to safely edit the "/etc/fstab" file—the confi
 #
 # Failure to do so is unsupported and may be destructive.
 #
-
 UUID=12A4B6C8-1A3B-1C3D-6E8F-123456789876 none hfs rw,noauto # Apple HFS+
 UUID=7E55582C-6D91-4148-28C6-208D03071164 none ntfs rw,noauto # Windows NTFS
 UUID=CF294178-3B0D-4B23-AC72-24D10AAC6735 none ext4 rw,noauto # Linux EXT4
+~
+~
+~
 ```
 
 6. Press **Esc** to stop editing and press **Shift + ZZ** to exit **vifs**
