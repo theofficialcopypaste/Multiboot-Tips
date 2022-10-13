@@ -122,8 +122,8 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
    <br>
    <img width="1125" alt="2022-10-13_09-03-23" src="https://user-images.githubusercontent.com/72515939/195476891-bd985cdb-3565-49c8-9fc8-ec53c1305c50.png">
   
-   <img width="1000" alt="UTC" src="https://user-images.githubusercontent.com/72515939/195476093-a770f262-73c3-4238-bd94-aa7c5d39db2d.png">
+   <img width="654" alt="2022-10-13 15_25_55-UTC" src="https://user-images.githubusercontent.com/72515939/195530554-455d58cd-8efd-4eed-8306-2af0eaac23f3.png">
 
 4. Boot to **Windows**.
-5. Click and Install **WinUTCOn.reg** to enable registry, Set back your exact time online.
+5. Merge or Double Click **WinUTCOn.reg** to install and enable registry, Set back your exact time online.
 6. **Reboot**. 
