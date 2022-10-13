@@ -23,7 +23,7 @@ Multiboot Post Install for Hackintosh
 
    <img width="680" alt="2022-10-11_15-21-37" src="https://user-images.githubusercontent.com/72515939/195022152-7a28b29f-8433-4f2b-b3ba-65a1b487cb3a.png">
 
-   <img width="669" alt="2022-10-11_04-51-31" src="https://user-images.githubusercontent.com/72515939/194950887-fb8b0de2-eec9-4872-9223-a49d55d96e1e.png">
+   <img width="680" alt="2022-10-11_04-51-31" src="https://user-images.githubusercontent.com/72515939/194950887-fb8b0de2-eec9-4872-9223-a49d55d96e1e.png">
 
 3. Type `sudo vifs` on mac terminal
 4. Press **o** to edit **/etc/fstab**
