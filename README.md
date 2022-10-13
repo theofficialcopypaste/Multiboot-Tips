@@ -73,7 +73,7 @@ Multiboot Post Install for Hackintosh
 
 ### Introduction:
 
-#### Why does this happen?**  
+#### Why does this happen? 
 
 <div align="justify">The simple explanation is; Windows uses Greenwhich time, and OSX uses Universal Time. It's as simple as that. Every time the other OS boots up - it changes around your BIOS settings in-order to 'correct' the CPU clock timer - which is essential for any computer to calculate things correctly. </div> 
   
