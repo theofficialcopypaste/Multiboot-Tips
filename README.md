@@ -107,7 +107,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
   
 **Reboot**, and sync the windows clock - now your time settings will be universal.
 
-**Auto Method (Require [**Hackintool**](https://github.com/headkaze/Hackintool))
+**Auto Method (Require [Hackintool](https://github.com/headkaze/Hackintool))**
 
 1. Boot to **macOS**
 2. Open Hackintool, Find **Utilities**
