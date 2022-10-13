@@ -103,7 +103,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
 
 <div align="justify">Left click on <strong>TimeZoneInformation</strong> and on the left it will display all the current values attributed to this registry key. On the left right click anywhere and choose <strong>Create new D-WORD</strong>. You will now see a new entry at the bottom of the list.</div>  
   
-<div align="justify">Right click on this new entry and choose <strong>Modify</strong> Rename the key <strong>RealTimeIsUniversal</strong> and change it's value to '1'. Click save, and now the entry should say <strong>RealTimeIsUniversal</strong> - <code>0x0000001</code> If it looks like that - then you're all done.</div>    
+<div align="justify">Right click on this new entry and choose <strong>Modify</strong> Rename the key <strong>RealTimeIsUniversal</strong> and change it's value to <code>1</code>. Click save, and now the entry should say <strong>RealTimeIsUniversal</strong> - <code>0x0000001</code> If it looks like that - then you're all done.</div>    
   
 **Reboot**, and sync the windows clock - now your time settings will be universal.
 
