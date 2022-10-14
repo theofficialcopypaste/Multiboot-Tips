@@ -2,9 +2,7 @@
 ## Unmount Non-Supported Storage
 ### Introduction
 
-<div align="justify">The NTFS partition will become corrupted due to the automatic mounting by an unsupported operating system, which will also probably shorten the storage lifespan. Typically, especially on macOS, Linux partitions like "ext4", "btrfs," "zfs," and others are not mounted automatically. This has been performed to avoid an issue that might occur if another operating system took over and tampered with the disc write permissions. 
-
-When Linux boots up with HFS+ or APFS, the same idea probably applies because macOS somehow doesn't recognise this format. NTFS, however, is different. On macOS, this format mounts automatically. This approach stops the Mac's automatic mounting the Windows NTFS. It is advisable to reduce power requirements and prevent storage corruption. This is essential to utilise vifs when editing the fstab file.</div>
+<div align="justify">The NTFS partition will become corrupted due to the automatic mounting by an unsupported operating system, which will also probably shorten the storage lifespan. Typically, especially on macOS, Linux partitions like "ext4", "btrfs," "zfs," and others are not mounted automatically. This has been performed to avoid an issue that might occur if another operating system took over and tampered with the disc write permissions. When Linux boots up with HFS+ or APFS, the same idea probably applies because macOS somehow doesn't recognise this format. NTFS, however, is different. On macOS, this format mounts automatically. This approach stops the Mac's automatic mounting the Windows NTFS. It is advisable to reduce power requirements and prevent storage corruption. This is essential to utilise vifs when editing the fstab file.</div>
 
 ### Supported and Unsupported System Format
 | **Detail**  | **Type**                                                                                                                                                                                                                                                                          |
