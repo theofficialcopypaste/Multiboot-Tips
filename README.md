@@ -85,6 +85,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 > Credits
 >  Cobanramo for the [guide](https://www.hackintosh-forum.de/forum/thread/56428-opencore-namen-von-den-booteintr%C3%A4gen-%C3%A4ndern/?postID=748264#post748264)
+
 >  [5T33Z0](https://github.com/5T33Z0) for writing this to us
 
 ## NO_NAME issues on Linux (Not Recommended)
