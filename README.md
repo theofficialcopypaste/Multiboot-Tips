@@ -88,6 +88,8 @@ The disk label files will be stored in your home folder but they are hidden
 
 >  [5T33Z0](https://github.com/5T33Z0) for writing this to us
 
+---
+
 ## NO_NAME issues on Linux (Not Recommended)
 
 <div align="justify">Certain <strong>dual-boot</strong> Hackintosh Macs with Linux users may experience issues with the <strong>EFI labels</strong> being <strong>unidentified</strong> using <strong>OpenCanopy.efi</strong>. That would be, <strong>NO_NAME</strong>.  It is annoying. The solution guided is not the best way. However, it is useful when all else labeling method fails. Try official method first. Head to:</div> 
