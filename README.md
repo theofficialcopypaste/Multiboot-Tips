@@ -81,7 +81,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 - Open your [config.plist](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) using [OCAT](https://github.com/ic005k/OCAuxiliaryTools)
 - Go to **Misc/PickerAttributes** and click on **Select** (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
-- Save the [config](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) and **Reboot**
+- Save and **Reboot**
 
 > Credits to [5T33Z0](https://github.com/5T33Z0), for writing this to us
 
