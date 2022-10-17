@@ -110,18 +110,18 @@ The disk label files will be stored in your home folder but they are hidden
 
 #### [Hackintool](https://github.com/headkaze/Hackintool)
 - Boot to **macOS**
-- Open [**Hackintool**](https://github.com/headkaze/Hackintool), &rarr; **Utilities**
+- Open [Hackintool](https://github.com/headkaze/Hackintool), &rarr; **Utilities**
 
 <img width="1000" alt="2022-10-11_04-37-31" src="https://user-images.githubusercontent.com/72515939/195476048-4f47ea41-da62-4b4b-97fd-68d5bba38b15.png">
 
 - Click on **Below-Center** icon to generate ".reg" file, called **WinUTCOff.reg** and **WinUTCOn.reg**
-  - [**WinUTCOff.reg**](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOff.reg) is to **disable** UTC registry patch
-  - [**WinUTCOn.reg**](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOn.reg) is to **enable** UTC registry patch
+  - [WinUTCOff.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOff.reg) is to **disable** UTC registry patch
+  - [WinUTCOn.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOn.reg) is to **enable** UTC registry patch
 
 <img width="1125" alt="2022-10-13_09-03-23" src="https://user-images.githubusercontent.com/72515939/195476891-bd985cdb-3565-49c8-9fc8-ec53c1305c50.png">
 
 <img width="1125" alt="2022-10-13 15_25_55-UTC" src="https://user-images.githubusercontent.com/72515939/195530554-455d58cd-8efd-4eed-8306-2af0eaac23f3.png">
 
-- Boot to **Windows**.
-- **Merge** or double click **WinUTCOn.reg** to install and enable registry. Set back your exact time **online**.
-- **Reboot**.
+- Boot to Windows.
+- **Merge** or double click **WinUTCOn.reg** to install and enable registry. Set back your exact time online.
+- **Reboot** to macOS and Windows to make sure the clock is properly sync via **UTC**.
