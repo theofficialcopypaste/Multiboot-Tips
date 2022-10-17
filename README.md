@@ -108,7 +108,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 ### How do I fix this?
 
-#### [Hackintool](https://github.com/headkaze/Hackintool)
+#### Hackintool
 - Boot to **macOS**
 - Open [Hackintool](https://github.com/headkaze/Hackintool), &rarr; **Utilities**
 
