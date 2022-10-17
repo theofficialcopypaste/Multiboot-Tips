@@ -2,14 +2,14 @@
 
 ## Unmount Non-Supported Storage
 
-<div align="justify">The NTFS partition will become corrupted due to the automatic mounting by an unsupported operating system, which will also probably shorten the storage lifespan. Especially on Apple MacOS, Linux partitions like ext4, btrfs, zfs and others are not mounted automatically. This has been performed to avoid an issue that might occur if other operating system took over and tampered with the disc write permissions. When Linux boots up with HFS+ or APFS, the same idea probably applies due to Apple Mac's somehow doesn't recognise this format. NTFS is different. This format mounts automatically to Apple Mac's. Here, this method is an approach to stops the Mac's mount automatically the NTFS. This is essential to use <strong>vifs</strong> when editing the fstab file.</div>
+<div align="justify">The NTFS partition will become corrupted due to the automatic mounting by an unsupported operating system, which will also probably shorten the storage lifespan. Especially on Apple MacOS, Linux partitions like ext4, btrfs, zfs and others are not mounted automatically. This has been performed to avoid an issue that might occur if other operating system took over and tampered with the disc write permissions. When Linux boots up with HFS+ or APFS, the same idea probably applies due to Apple Mac's somehow doesn't recognise this format. NTFS is different. This format mounts automatically to Apple Mac's. Here, this method is an approach to stops the Mac's mount automatically the NTFS. This is essential to use <code>vifs</code> when editing the <strong>fstab</strong>.</div>
 
 ### Supported and Unsupported System Format
 
-| **Detail**  | **Type**                                                                                                                                                                                                                                                                          |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Supported   | APFS, APFS (Encrypted), APFS (Case-sensitive), APFS (Case-sensitive, Encrypted), Mac OS Extended (Journaled), Mac OS Extended (Journaled, Encrypted), Mac OS Extended (Case-sensitive, Journaled), Mac OS Extended (Case-sensitive, Journaled, Encrypted), MS-DOS (FAT) and ExFAT |
-| Unsupported | Ext, Ext2, Ext3, Ext4, JFS, ReiserFS, XFS, btrfs, swap, ReFS and NTFS                                                                                                                                                                                                             |
+| **Detail**      | **Type**                                                                                                                                                                                                                                                                          |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Supported**   | APFS, APFS (Encrypted), APFS (Case-sensitive), APFS (Case-sensitive, Encrypted), Mac OS Extended (Journaled), Mac OS Extended (Journaled, Encrypted), Mac OS Extended (Case-sensitive, Journaled), Mac OS Extended (Case-sensitive, Journaled, Encrypted), MS-DOS (FAT) and ExFAT |
+| **Unsupported** | Ext, Ext2, Ext3, Ext4, JFS, ReiserFS, XFS, btrfs, swap, ReFS and NTFS                                                                                                                                                                                                             |
 
 ### What is fstab
 
@@ -17,18 +17,18 @@
 
 ### Why vifs?
 
-The command "vifs" is a utility to safely edit the "/etc/fstab" file—the configuration file we are going to tell to not mount our partition. The "vi" part is actually from the fact that we are using the text editor "vi" to change our file.
+The command `vifs` is a utility to safely edit the **/etc/fstab** file—the configuration file we are going to tell to not mount our partition. The `vi` part is actually from the fact that we are using the text editor `vi` to change our file.
 
 #### Recommended Method:
 
-- Open **Disk Utility** &rarr; **Info**
-- Find **File System UUID** and **copy UUID value**
+- Open `Disk Utility` &rarr; `Info`
+- Find `File System UUID` and `copy UUID value`
 
 <img width="700" alt="2022-10-11_04-51-31" src="https://user-images.githubusercontent.com/72515939/194950887-fb8b0de2-eec9-4872-9223-a49d55d96e1e.png">
 
 - Type `sudo vifs` on mac terminal
 - Press `o` to edit /etc/fstab
-- Add `UUID="Volume UUID" none ntfs rw,noauto`. Below is an **example**:
+- Add `UUID="Volume UUID" none ntfs rw,noauto`. Below is an `example`:
 
 ```zsh
 #
@@ -44,8 +44,8 @@ UUID=CF294178-3B0D-4B23-AC72-24D10AAC6735 none ext4 rw,noauto # Linux EXT4
 ~
 ```
 
-- Press **Esc** to stop editing and press **Shift + ZZ** to exit **vifs**
-- Type `sudo automount -vc` to **reset** auto mounter
+- Hit `Esc` to stop editing and press `Shift + ZZ` (double capital Z) to exit `vifs`
+- Type `sudo automount -vc` to `reset` auto mounter
 - Restart PC.
 
 ---
@@ -53,14 +53,14 @@ UUID=CF294178-3B0D-4B23-AC72-24D10AAC6735 none ext4 rw,noauto # Linux EXT4
 
 ### Generating disk label files
 
-- Download the latest [**OpenCore Package**](https://github.com/acidanthera/OpenCorePkg/releases) and **unzip** it
-- Find **/Utilities/disklabel** inside **OpenCore** folder
-- Run **Terminal**
-- Drag the executable unix file **disklabel** (not the .exe) into the Terminal and hit **Enter**. Below is sample command to disk labeling:
+- Download the latest [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases) and unzip it
+- Find `/Utilities/disklabel` inside OpenCore folder
+- Run Terminal
+- Drag the executable unix file disklabel (not the .exe) into the Terminal and hit **Enter**. Below is sample command to disk labeling:
 ```zsh
 -e "nameofyourdisk" .disk_label .disk_label_2x
 ```
-- The **complete** line should look like below:
+- The complete line should look like below:
 
 ```zsh
 -e "Winslow" .disk_label .disk_label_2x
@@ -72,21 +72,18 @@ The disk label files will be stored in your home folder but they are hidden
 ### Moving the files to the correct location
 
 - In Finder, got to your Home Folder
-- Press "**Cmd+Shift+.**" to display hidden files. The process before should dumped copy of **.disk_label** and **.disk_label_x2**
+- Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`
 - As example, Windows EFI partition. Mount the EFI containing the "Microsoft" Folder
-- Paste/Move the **.disk_label** and **.disk_label_x2** label files into the **Microsoft/Boot** folder. 
-- Press "**Cmd+Shift+.**" again to mask the hidden files. Now, adjust **PickerAttributes** 
+- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the **Microsoft/Boot** folder. 
+- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes` 
 
 ### Adjusting PickerAttributes
 
-- Open your Press "**Cmd+Shift+.**" with Press "**Cmd+Shift+.**"
-- Go to Press "**Cmd+Shift+.**" and click on **Select**, Check `OC_ATTR_USE_DISK_LABEL_FILE`
-- **Save** the config and **Reboot**
+- Open your config.plist using [OCAT](https://github.com/ic005k/OCAuxiliaryTools)
+- Go to **Misc/PickerAttributes** and click on **Select** (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
+- Save the config and **Reboot**
 
-> Credits
->  Cobanramo for the [guide](https://www.hackintosh-forum.de/forum/thread/56428-opencore-namen-von-den-booteintr%C3%A4gen-%C3%A4ndern/?postID=748264#post748264)
-
->  [5T33Z0](https://github.com/5T33Z0) for writing this to us
+> Credits to [5T33Z0](https://github.com/5T33Z0), for writing this to us
 
 ---
 
