@@ -90,29 +90,6 @@ The disk label files will be stored in your home folder but they are hidden
 
 ---
 
-## NO_NAME issues on Linux (Not Recommended)
-
-<div align="justify">Certain <strong>dual-boot</strong> Hackintosh Macs with Linux users may experience issues with the <strong>EFI labels</strong> being <strong>unidentified</strong> using <strong>OpenCanopy.efi</strong>. That would be, <strong>NO_NAME</strong>.  It is annoying. The solution guided is not the best way. However, it is useful when all else labeling method fails. Try official method first. Head to:</div> 
-<br>
-
-[OpenCore Multiboot](https://dortania.github.io/OpenCore-Multiboot/oc/linux.html)
-
-### Method:
-
-- Boot to Linux
-- Check Linux EFI partition path. i.e; /dev/sdaX (visually using GParted)
-- Open Terminal and use `sudo`, `fatlabel`, `device path` and `new_label`.
-
-Example:
-```zsh
-sudo fatlabel /dev/sda1 Arch
-```
-- Press Enter, close Terminal and **Restart**
-
-> Note: Do not use this method on **Windows**.
-
----
-
 ## Fix Clock on both OS (Mac and Windows)
 
 ### Why does this happen? 
