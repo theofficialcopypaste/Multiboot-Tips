@@ -21,7 +21,7 @@
 
 The command `vifs` is a utility to safely edit the /etc/fstab file—the configuration file we are going to tell to not mount our partition. The `vi` part is actually from the fact that we are using the text editor `vi` to change our file.
 
-> Note: Apple recommend `vifs` over `vim/other capable` editing apps to prevent an issue
+> **Note**: Apple recommend `vifs` over `vim/other capable` editing apps to prevent an issue
 
 #### Recommended Method:
 
@@ -93,7 +93,7 @@ The disk label files will be stored in your home folder but they are hidden
 - Go to Misc/PickerAttributes and click on Select (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
 - Save and Reboot
 
-> Credits to [5T33Z0](https://github.com/5T33Z0), for writing this to us
+> **Note**: Credits to [5T33Z0](https://github.com/5T33Z0), for writing this to us
 
 ---
 
