@@ -48,6 +48,14 @@ The command `vifs` is a utility to safely edit the /etc/fstab file—the configu
 - Type `sudo automount -vc` to `reset` auto mounter
 - Restart PC.
 
+<div align=center>
+	
+<img width="1120" alt="2022-10-27_23-49-33" src="https://user-images.githubusercontent.com/72515939/198338330-84c4f1bd-eb19-4709-b6d8-1ed3e88abd7e.png">
+
+</div>
+
+> **Note**: Use at your own risk!
+
 ---
 
 ## Changing Windows Disk Label in BootPicker
@@ -116,5 +124,24 @@ The disk label files will be stored in your home folder but they are hidden
 </div>
 
 - Boot to Windows.
-- Merge or double click WinUTCOn.reg to install and enable registry. Set back your exact time online.
+- Merge or double click WinUTCOn.reg to install and enable registry.
 - Reboot to macOS and Windows to make sure the clock is properly sync via UTC.
+
+> **Note**: Please set back exact time online via Windows or Mac.
+
+### Acknowledgement
+
+- [**Acidanthera**](https://github.com/acidanthera) for
+```zsh
+git clone https://github.com/acidanthera/OpenCorePkg.git
+```
+
+- [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) for 
+```zsh
+git clone https://github.com/dortania/OpenCore-Install-Guide.git
+```
+
+- [**headkaze**](https://github.com/headkaze) for
+```zsh
+git clone https://github.com/headkaze/Hackintool.git
+```
