@@ -1,4 +1,4 @@
-# Hackintosh Tips
+# Multiboot Tips
 
 ## Post Install (Optional)
 
