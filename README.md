@@ -8,10 +8,10 @@
 
 #### Supported and Unsupported System Format
 
-| **Detail**      | **Type**                                                                                                                                                                                                                                                                          |
+| **Detail**      | **Type**                                                                                                                                                                                                                                                                         |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Supported**   | APFS, APFS (Encrypted), APFS (Case-sensitive), APFS (Case-sensitive, Encrypted), Mac OS Extended (Journaled), Mac OS Extended (Journaled, Encrypted), Mac OS Extended (Case-sensitive, Journaled), Mac OS Extended (Case-sensitive, Journaled, Encrypted), MS-DOS (FAT) and ExFAT |
-| **Unsupported** | Ext, Ext2, Ext3, Ext4, JFS, ReiserFS, XFS, btrfs, swap, ReFS and NTFS                                                                                                                                                                                                             |
+| Supported   | APFS, APFS (Encrypted), APFS (Case-sensitive), APFS (Case-sensitive, Encrypted), Mac OS Extended (Journaled), Mac OS Extended (Journaled, Encrypted), Mac OS Extended (Case-sensitive, Journaled), Mac OS Extended (Case-sensitive, Journaled, Encrypted), MS-DOS (FAT) and ExFAT |
+| Unsupported | Ext, Ext2, Ext3, Ext4, JFS, ReiserFS, XFS, btrfs, swap, ReFS and NTFS                                                                                                                                                                                                             |
 
 #### What is fstab
 
@@ -19,9 +19,9 @@
 
 #### Why vifs?
 
-The command `vifs` is a utility to safely edit the **/etc/fstab** file—the configuration file we are going to tell to not mount our partition. The `vi` part is actually from the fact that we are using the text editor `vi` to change our file.
+The command `vifs` is a utility to safely edit the /etc/fstab file—the configuration file we are going to tell to not mount our partition. The `vi` part is actually from the fact that we are using the text editor `vi` to change our file.
 
-> **Note:** Apple recommend `vifs` over `vim/other capable` editing apps to prevent an issue
+> Note: Apple recommend `vifs` over `vim/other capable` editing apps to prevent an issue
 
 #### Recommended Method:
 
@@ -57,7 +57,7 @@ The command `vifs` is a utility to safely edit the **/etc/fstab** file—the con
 - Download the latest [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases) and unzip it
 - Find `/Utilities/disklabel` inside OpenCore folder
 - Run Terminal
-- Drag the executable unix file disklabel (not the .exe) into the Terminal and hit **Enter**. Below is sample command to disk labeling:
+- Drag the executable unix file disklabel (not the .exe) into the Terminal and hit Enter. Below is sample command to disk labeling:
 
 	```zsh
 	-e "nameofyourdisk" .disk_label .disk_label_2x
@@ -76,14 +76,14 @@ The disk label files will be stored in your home folder but they are hidden
 - In Finder, got to your Home Folder
 - Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`
 - As example, Windows EFI partition. Mount the EFI containing the "Microsoft" Folder
-- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the **Microsoft/Boot** folder. 
+- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the Microsoft/Boot folder. 
 - Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes` 
 
 ### Adjusting PickerAttributes
 
 - Open your [config.plist](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) using [OCAT](https://github.com/ic005k/OCAuxiliaryTools)
-- Go to **Misc/PickerAttributes** and click on **Select** (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
-- Save and **Reboot**
+- Go to Misc/PickerAttributes and click on Select (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
+- Save and Reboot
 
 > Credits to [5T33Z0](https://github.com/5T33Z0), for writing this to us
 
@@ -94,8 +94,8 @@ The disk label files will be stored in your home folder but they are hidden
 ### How do I fix this?
 
 #### Hackintool
-- Boot to **macOS**
-- Open [Hackintool](https://github.com/headkaze/Hackintool), &rarr; **Utilities**
+- Boot to macOS
+- Open [Hackintool](https://github.com/headkaze/Hackintool), &rarr; Utilities
 
 <div align=center>
 
@@ -103,9 +103,9 @@ The disk label files will be stored in your home folder but they are hidden
 
 </div>
 
-- Click on **Below-Center** icon to generate ".reg" file, called **WinUTCOff.reg** and **WinUTCOn.reg**
-  - [WinUTCOff.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOff.reg) is to **disable** UTC registry patch
-  - [WinUTCOn.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOn.reg) is to **enable** UTC registry patch
+- Click on Below-Center icon to generate ".reg" file, called WinUTCOff.reg and WinUTCOn.reg
+  - [WinUTCOff.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOff.reg) is to disable UTC registry patch
+  - [WinUTCOn.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOn.reg) is to enable UTC registry patch
 
 <div align=center>
 
@@ -116,5 +116,5 @@ The disk label files will be stored in your home folder but they are hidden
 </div>
 
 - Boot to Windows.
-- **Merge** or double click **WinUTCOn.reg** to install and enable registry. Set back your exact time online.
-- **Reboot** to macOS and Windows to make sure the clock is properly sync via **UTC**.
+- Merge or double click WinUTCOn.reg to install and enable registry. Set back your exact time online.
+- Reboot to macOS and Windows to make sure the clock is properly sync via UTC.
