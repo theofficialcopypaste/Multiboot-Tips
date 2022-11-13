@@ -46,6 +46,14 @@ The command `vifs` is a utility to safely edit the /etc/fstab file—the configu
 #
 UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto
 UUID=A4546B4A-B867-477E-BE4A-788C8B007925 none ntfs rw,noauto
+~
+~
+~
+~
+~
+~
+~
+~
 ```
 
 - Hit `Esc` to stop editing and press `Shift + ZZ` (double capital Z) to exit `vifs`
