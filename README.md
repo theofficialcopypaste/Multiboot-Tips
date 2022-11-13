@@ -38,11 +38,15 @@ The command `vifs` is a utility to safely edit the /etc/fstab file—the configu
 - Press `o` to edit /etc/fstab
 - Add `UUID="Volume UUID" none ntfs rw,noauto`. Below is an `example`:
 
-<div align=center>
-
-<img width="641" alt="2022-10-27_23-33-36" src="https://user-images.githubusercontent.com/72515939/198335620-097866d1-9780-4dfb-8e73-d1e5d129ce1f.png">
-
-</div>
+```zsh
+#
+# Warning - this file should only be modified with vifs(8)
+#
+# Failure to do so is unsupported and may be destructive.
+#
+UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto
+UUID=A4546B4A-B867-477E-BE4A-788C8B007925 none ntfs rw,noauto
+```
 
 - Hit `Esc` to stop editing and press `Shift + ZZ` (double capital Z) to exit `vifs`
 - Type `sudo automount -vc` to `reset` auto mounter
