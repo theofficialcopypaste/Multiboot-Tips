@@ -109,7 +109,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 ---
 
-## Fix Clock on both OS (Mac and Windows)
+## Fix Clock on Multiboot (most common, MacOS + Windows)
 
 ### How do I fix this?
 
