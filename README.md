@@ -1,6 +1,12 @@
 # Hackintosh Multiboot Tips
 
-## Prevent ACPI issues on Multiboot (Windows + macOS)
+## Jump!
+
+* [Prevent ACPI siisues on Multiboot (Windows + macOS)](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
+* [Unmount Unsupport Storage](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#unmount-unsupported-storage)
+* [Changing Windows Label on BootPicker](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#changing-windows-disk-label-in-bootpicker)
+
+### Prevent ACPI issues on Multiboot (Windows + macOS)
 
 Several steps must be taken to prevent modded ACPI from being injected into other operating systems:
 
@@ -10,9 +16,9 @@ Several steps must be taken to prevent modded ACPI from being injected into othe
 | Official OpenCore | `If \_OSI ("Darwin")` via ACPI, `CustomSMBIOSGuid` and `UpdateSMBIOSMode` Quirks.   |
 | OpenCore Mod      | `EnableforAll` Quirks                                                       	  |
 
-### Clover
+#### Clover
 
-#### Method: `Fix Darwin` option
+##### Method: `Fix Darwin` option
 
 Open [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and look and mark for the **Fix Darwin** option in ACPI Section, which is equivalent to the `If OSI ("Darwin")` argument and save `config.plist`.
 
@@ -30,9 +36,9 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 </div>
 
-### Official OpenCore
+#### Official OpenCore
 
-#### Method: `If _OSI ("Darwin")` approach
+##### Method: `If _OSI ("Darwin")` approach
 
 To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems conflicted with modified `.aml` scripts. This is because macOS approach is different from those of other operating systems. Below is an example:
 
@@ -45,9 +51,9 @@ To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument
 
 > **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Checkout my [SSDT-EXT_info](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT_info.dsl) for an explanation.
 
-### OpenCore Mod
+#### OpenCore Mod
 
-#### Method: `EnableforAll` approach
+##### Method: `EnableforAll` approach
 
 If the `EnableforAll` quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of `If _OSI ("Darwin")` is sufficient.
 
@@ -63,28 +69,28 @@ If the `EnableforAll` quirks function is injected via config.plist, OpenCore Mod
 
 ---
 
-## Unmount Unsupported Storage
+### Unmount Unsupported Storage
 
 <div align=justify>The NTFS partition will become corrupted due to the automatic mounting by an unsupported operating system, which will also probably shorten the storage lifespan. Especially on Apple MacOS, Linux partitions like ext4, btrfs, zfs and others are not mounted automatically. This has been performed to avoid an issue that might occur if other operating system took over and tampered with the disc write permissions. When Linux boots up with HFS+ or APFS, the same idea probably applies due to Apple Mac's somehow doesn't recognise this format. NTFS is different. This format mounts automatically to Apple Mac's. Here, this method is an approach to stops the Mac's mount automatically the NTFS. This is essential to use <code>vifs</code> when editing the <strong>fstab</strong>.</div>
 
-### Supported and Unsupported System Format
+#### Supported and Unsupported System Format
 
 | **Detail**  | **Type**                                                                                                                                                                                                                                                                          |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Supported   | APFS, APFS (Encrypted), APFS (Case-sensitive), APFS (Case-sensitive, Encrypted), Mac OS Extended (Journaled), Mac OS Extended (Journaled, Encrypted), Mac OS Extended (Case-sensitive, Journaled), Mac OS Extended (Case-sensitive, Journaled, Encrypted), MS-DOS (FAT) and ExFAT |
 | Unsupported | Ext, Ext2, Ext3, Ext4, JFS, ReiserFS, XFS, btrfs, swap, ReFS and NTFS                                                                                                                                                                                                             |
 
-#### What is fstab
+##### What is fstab
 
 <div align=justify>The fstab, is a configuration table designed to ease the burden of mounting and unmounting file systems to a machine. It is a set of rules used to control how different filesystems are treated each time they are introduced to a system. Consider USB drives, for example. Today, we are so used to the plug and play nature of our favorite external drives that we may completely forget that operations are going on behind the scenes to mount the drive and read/write data. In the time of the ancients, users had to manually mount these drives to a file location using the mount command. The fstab file became an attractive option because of challenges like this. It is designed to configure a rule where specific file systems are detected, then automatically mounted in the user's desired order every time the system boots. Not only is it less work over time, but it also allows the user to avoid load order errors that could eat up valuable time and energy.</div>
 
-#### Why vifs?
+##### Why vifs?
 
 The command `vifs` is a utility to safely edit the `etc` / `fstab` file—the configuration file we are going to tell to not mount our partition. The `vi` part is actually from the fact that we are using the text editor `vi` to change our file.
 
 > **Note**: Apple recommend `vifs` over `vim` editing apps to prevent an issue
 
-#### Recommended Method:
+##### Recommended Method:
 
 - Open `Disk Utility` &rarr; `Info`
 - Find `File System UUID` and `copy UUID value`
@@ -134,9 +140,9 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 
 ---
 
-## Changing Windows Disk Label in BootPicker
+### Changing Windows Disk Label in BootPicker
 
-### Generating disk label files
+#### Generating disk label files
 
 - Download the latest [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases) and unzip it
 - Find `Utilities` / `disklabel` inside OpenCore folder
@@ -157,7 +163,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 
 The disk label files will be stored in your home folder but they are hidden
 
-#### Moving the files to the correct location
+##### Moving the files to the correct location
 
 - In Finder, got to your Home Folder
 - Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`
@@ -165,7 +171,7 @@ The disk label files will be stored in your home folder but they are hidden
 - Paste/Move the `.disk_label` and `.disk_label_x2` label files into the Microsoft/Boot folder.
 - Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes`
 
-#### Adjusting PickerAttributes
+##### Adjusting PickerAttributes
 
 - Open your [config.plist](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) using [OCAT](https://github.com/ic005k/OCAuxiliaryTools)
 - Go to Misc/PickerAttributes and click on Select (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
@@ -177,11 +183,11 @@ The disk label files will be stored in your home folder but they are hidden
 
 ---
 
-## Fix Clock on Multiboot (most common, MacOS + Windows)
+### Fix Clock on Multiboot (most common, MacOS + Windows)
 
-### How do I fix this?
+#### How do I fix this?
 
-#### Hackintool
+##### Hackintool
 
 - Boot to macOS
 - Open [Hackintool](https://github.com/headkaze/Hackintool), &rarr; Utilities
