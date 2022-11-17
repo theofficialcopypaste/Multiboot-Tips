@@ -1,4 +1,4 @@
-# Multiboot Tips
+# Hackintosh Multiboot Tips
 
 ## Post Install (Optional)
 
@@ -44,8 +44,9 @@ The command `vifs` is a utility to safely edit the /etc/fstab file—the configu
 #
 # Failure to do so is unsupported and may be destructive.
 #
-UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto
-UUID=A4546B4A-B867-477E-BE4A-788C8B007925 none ntfs rw,noauto
+UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto // Winslows 
+UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none hfs rw,noauto. // macOS HFS+
+UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 ~
 ~
 ~
@@ -140,6 +141,71 @@ The disk label files will be stored in your home folder but they are hidden
 - Reboot to macOS and Windows to make sure the clock is properly sync via UTC.
 
 > **Note**: Please set back exact time online via Windows or Mac.
+
+---
+
+## Prevent ACPI issues on multiboot (Windows + macOS)
+
+Several steps must be taken to prevent modded ACPI from being injected into other operating systems: 
+
+| Bootloader        | Method                                                                    |
+|-------------------|---------------------------------------------------------------------------|
+| Clover            | Fix Darwin Option		                                                |
+| Official OpenCore | If _OSI ("Darwin") via ACPI, CustomSMBIOSGuid and UpdateSMBIOSMode Quirks |
+| OpenCore Mod      | EnableforAll Quirks                                                       |
+
+### Clover
+
+#### Method: Fix Darwin
+
+Open [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and look and mark for the **Fix Darwin** option in ACPI Section, which is equivalent to the `If OSI ("Darwin")` argument and save `config.plist`.
+
+<div align=center>
+
+![FixDarwin](https://user-images.githubusercontent.com/72515939/202373593-df4abcda-3d38-4548-a9ae-e5403a26b7db.png)
+
+</div>
+
+If you are not using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/), you can use any plist editor to open the config.plist. Find:
+
+`ACPI / DSDT / Fixes / FixDarwin = YES`.
+
+<div align=center>
+
+![FixD](https://user-images.githubusercontent.com/72515939/202375889-3fb50eea-8d79-496c-91ff-8ff1db673a25.png)
+
+</div>
+
+### Official OpenCore
+
+#### Method: Enable If _OSI ("Darwin")
+
+To enable If _OSI ("Darwin"), modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems from injecting modified `.aml` scripts. This is because macOS requirements are sometimes different from those of other operating systems. Below is an example:
+
+<div align=center>
+
+![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
+![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
+
+</div>
+
+> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist.
+
+### OpenCore Mod
+
+#### Method: EnableforAll
+
+If the EnableforAll quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of OSI ("Darwin") is sufficient. 
+
+<div align=center>
+
+![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
+
+</div>
+
+> **Note**: This require `ACPI` / `Quirks` / `EnableforAll` = `Yes` and `Booter` / `Quirks` / `EnableforAll` = `Yes` via config.plist. So, you may set `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `No` and `PlatformInfo` / `UpdateSMBIOSMode` = `Create` via config.plist.
+
+---
 
 ### Acknowledgement
 
