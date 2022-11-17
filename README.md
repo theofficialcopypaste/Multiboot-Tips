@@ -12,7 +12,7 @@ Several steps must be taken to prevent modded ACPI from being injected into othe
 
 ### Clover
 
-#### Method: Fix Darwin
+#### Method: `Fix Darwin` option
 
 Open [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and look and mark for the **Fix Darwin** option in ACPI Section, which is equivalent to the `If OSI ("Darwin")` argument and save `config.plist`.
 
@@ -34,7 +34,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 ### Official OpenCore
 
-#### Method: Enable `If _OSI ("Darwin")`
+#### Method: `If _OSI ("Darwin")` approach
 
 To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems conflicted with modified `.aml` scripts. This is because macOS approach is different from those of other operating systems. Below is an example:
 
@@ -49,7 +49,7 @@ To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument
 
 ### OpenCore Mod
 
-#### Method: EnableforAll
+#### Method: `EnableforAll` approach
 
 If the `EnableforAll` quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of `If _OSI ("Darwin")` is sufficient.
 
