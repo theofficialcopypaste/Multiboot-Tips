@@ -120,7 +120,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 <div align=center>
 
-<img width="1000" alt="2022-10-11_04-37-31" src="https://user-images.githubusercontent.com/72515939/195476048-4f47ea41-da62-4b4b-97fd-68d5bba38b15.png">
+![Utilities](https://user-images.githubusercontent.com/72515939/202380813-0753ac51-31ae-4ece-9b69-5830b13e3416.png)
 
 </div>
 
@@ -130,7 +130,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 <div align=center>
 
-<img width="1125" alt="2022-10-13_09-03-23" src="https://user-images.githubusercontent.com/72515939/195476891-bd985cdb-3565-49c8-9fc8-ec53c1305c50.png">
+![Utilities2](https://user-images.githubusercontent.com/72515939/202380902-3d2eb0c4-ed45-4154-9afd-4422febe224c.png)
 
 <img width="1125" alt="2022-10-13 15_25_55-UTC" src="https://user-images.githubusercontent.com/72515939/195530554-455d58cd-8efd-4eed-8306-2af0eaac23f3.png">
 
