@@ -22,7 +22,7 @@ Open [Clover Configurator](https://mackie100projects.altervista.org/download-clo
 
 </div>
 
-If you are not using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/), you can use any plist editor to open the config.plist. Find `ACPI / DSDT / Fixes / FixDarwin = YES`.
+If you are not using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/), you can use any plist editor to open the config.plist. Find `ACPI` / `DSDT` / `Fixes` / `FixDarwin` = `YES`.
 
 <div align=center>
 
