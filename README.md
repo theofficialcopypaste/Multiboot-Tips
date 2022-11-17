@@ -7,6 +7,7 @@
 * [Prevent ACPI isues on Multiboot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
 * [Unmount Unsupport Storage](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#unmount-unsupported-storage)
 * [Changing Windows Label on BootPicker](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#changing-windows-disk-label-in-bootpicker)
+* [Fix Clock](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#fix-clock-on-multiboot)
 
 ---
 
