@@ -1,15 +1,78 @@
 # Hackintosh Multiboot Tips
 
-## Post Install (Optional)
+## Prevent ACPI issues on multiboot (Windows + macOS)
 
-### Unmount Unsupported Storage
+Several steps must be taken to prevent modded ACPI from being injected into other operating systems:
+
+| Bootloader        | Method                                                                     |
+| ----------------- | -------------------------------------------------------------------------- |
+| Clover            | Fix Darwin Option                                                          |
+| Official OpenCore | If \_OSI ("Darwin") via ACPI, CustomSMBIOSGuid and UpdateSMBIOSMode Quirks |
+| OpenCore Mod      | EnableforAll Quirks                                                        |
+
+### Clover
+
+#### Method: Fix Darwin
+
+Open [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and look and mark for the **Fix Darwin** option in ACPI Section, which is equivalent to the `If OSI ("Darwin")` argument and save `config.plist`.
+
+<div align=center>
+
+![FixDarwin](https://user-images.githubusercontent.com/72515939/202373593-df4abcda-3d38-4548-a9ae-e5403a26b7db.png)
+
+</div>
+
+If you are not using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/), you can use any plist editor to open the config.plist. Find:
+
+`ACPI / DSDT / Fixes / FixDarwin = YES`.
+
+<div align=center>
+
+![FixD](https://user-images.githubusercontent.com/72515939/202375889-3fb50eea-8d79-496c-91ff-8ff1db673a25.png)
+
+</div>
+
+### Official OpenCore
+
+#### Method: Enable If \_OSI ("Darwin")
+
+To enable If \_OSI ("Darwin"), modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems from injecting modified `.aml` scripts. This is because macOS requirements are sometimes different from those of other operating systems. Below is an example:
+
+<div align=center>
+
+![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
+![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
+
+</div>
+
+> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Checkout my [SSDT-EXT_info](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT_info.dsl) for an explanation.
+
+### OpenCore Mod
+
+#### Method: EnableforAll
+
+If the EnableforAll quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of OSI ("Darwin") is sufficient.
+
+<div align=center>
+
+![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
+
+</div>
+
+> **Note**: This require `ACPI` / `Quirks` / `EnableforAll` = `Yes` and `Booter` / `Quirks` / `EnableforAll` = `Yes` via config.plist. So, you may set `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `No` and `PlatformInfo` / `UpdateSMBIOSMode` = `Create` via config.plist. Checkout my [SSDT-EXTNOACPI](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXTNOACPI.dsl) as an example.
+
+<br>
+
+---
+
+## Unmount Unsupported Storage
 
 <div align=justify>The NTFS partition will become corrupted due to the automatic mounting by an unsupported operating system, which will also probably shorten the storage lifespan. Especially on Apple MacOS, Linux partitions like ext4, btrfs, zfs and others are not mounted automatically. This has been performed to avoid an issue that might occur if other operating system took over and tampered with the disc write permissions. When Linux boots up with HFS+ or APFS, the same idea probably applies due to Apple Mac's somehow doesn't recognise this format. NTFS is different. This format mounts automatically to Apple Mac's. Here, this method is an approach to stops the Mac's mount automatically the NTFS. This is essential to use <code>vifs</code> when editing the <strong>fstab</strong>.</div>
 
-#### Supported and Unsupported System Format
+### Supported and Unsupported System Format
 
-| **Detail**      | **Type**                                                                                                                                                                                                                                                                         |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Detail**  | **Type**                                                                                                                                                                                                                                                                          |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Supported   | APFS, APFS (Encrypted), APFS (Case-sensitive), APFS (Case-sensitive, Encrypted), Mac OS Extended (Journaled), Mac OS Extended (Journaled, Encrypted), Mac OS Extended (Case-sensitive, Journaled), Mac OS Extended (Case-sensitive, Journaled, Encrypted), MS-DOS (FAT) and ExFAT |
 | Unsupported | Ext, Ext2, Ext3, Ext4, JFS, ReiserFS, XFS, btrfs, swap, ReFS and NTFS                                                                                                                                                                                                             |
 
@@ -44,7 +107,7 @@ The command `vifs` is a utility to safely edit the /etc/fstab file—the configu
 #
 # Failure to do so is unsupported and may be destructive.
 #
-UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto // Winslows 
+UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto // Winslows
 UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none hfs rw,noauto. // macOS HFS+
 UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 ~
@@ -69,6 +132,8 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 
 > **Note**: Use at your own risk!
 
+<br>
+
 ---
 
 ## Changing Windows Disk Label in BootPicker
@@ -80,33 +145,37 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 - Run Terminal
 - Drag the executable unix file disklabel (not the .exe) into the Terminal and hit Enter. Below is sample command to disk labeling:
 
-	```zsh
-	-e "nameofyourdisk" .disk_label .disk_label_2x
-	```
+  ```zsh
+  -e "nameofyourdisk" .disk_label .disk_label_2x
+  ```
+
 - The complete line should look like below:
 
-	```zsh
-	-e "Winslow" .disk_label .disk_label_2x
-	```
+  ```zsh
+  -e "Winslow" .disk_label .disk_label_2x
+  ```
+
 - Hit enter
 
 The disk label files will be stored in your home folder but they are hidden
 
-### Moving the files to the correct location
+#### Moving the files to the correct location
 
 - In Finder, got to your Home Folder
 - Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`
 - As example, Windows EFI partition. Mount the EFI containing the "Microsoft" Folder
-- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the Microsoft/Boot folder. 
-- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes` 
+- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the Microsoft/Boot folder.
+- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes`
 
-### Adjusting PickerAttributes
+#### Adjusting PickerAttributes
 
 - Open your [config.plist](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) using [OCAT](https://github.com/ic005k/OCAuxiliaryTools)
 - Go to Misc/PickerAttributes and click on Select (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
 - Save and Reboot
 
 > **Note**: Credits to [5T33Z0](https://github.com/5T33Z0), for writing this to us
+
+<br>
 
 ---
 
@@ -115,6 +184,7 @@ The disk label files will be stored in your home folder but they are hidden
 ### How do I fix this?
 
 #### Hackintool
+
 - Boot to macOS
 - Open [Hackintool](https://github.com/headkaze/Hackintool), &rarr; Utilities
 
@@ -134,7 +204,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 <img width="1125" alt="2022-10-13 15_25_55-UTC" src="https://user-images.githubusercontent.com/72515939/195530554-455d58cd-8efd-4eed-8306-2af0eaac23f3.png">
 
-</div>
+</div><br>
 
 - Boot to Windows.
 - Merge or double click WinUTCOn.reg to install and enable registry.
@@ -142,84 +212,26 @@ The disk label files will be stored in your home folder but they are hidden
 
 > **Note**: Please set back exact time online via Windows or Mac.
 
----
-
-## Prevent ACPI issues on multiboot (Windows + macOS)
-
-Several steps must be taken to prevent modded ACPI from being injected into other operating systems: 
-
-| Bootloader        | Method                                                                    |
-|-------------------|---------------------------------------------------------------------------|
-| Clover            | Fix Darwin Option		                                                |
-| Official OpenCore | If _OSI ("Darwin") via ACPI, CustomSMBIOSGuid and UpdateSMBIOSMode Quirks |
-| OpenCore Mod      | EnableforAll Quirks                                                       |
-
-### Clover
-
-#### Method: Fix Darwin
-
-Open [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and look and mark for the **Fix Darwin** option in ACPI Section, which is equivalent to the `If OSI ("Darwin")` argument and save `config.plist`.
-
-<div align=center>
-
-![FixDarwin](https://user-images.githubusercontent.com/72515939/202373593-df4abcda-3d38-4548-a9ae-e5403a26b7db.png)
-
-</div>
-
-If you are not using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/), you can use any plist editor to open the config.plist. Find:
-
-`ACPI / DSDT / Fixes / FixDarwin = YES`.
-
-<div align=center>
-
-![FixD](https://user-images.githubusercontent.com/72515939/202375889-3fb50eea-8d79-496c-91ff-8ff1db673a25.png)
-
-</div>
-
-### Official OpenCore
-
-#### Method: Enable If _OSI ("Darwin")
-
-To enable If _OSI ("Darwin"), modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems from injecting modified `.aml` scripts. This is because macOS requirements are sometimes different from those of other operating systems. Below is an example:
-
-<div align=center>
-
-![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
-![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
-
-</div>
-
-> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Checkout my [SSDT-EXT_info](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT_info.dsl) for an explanation.
-
-### OpenCore Mod
-
-#### Method: EnableforAll
-
-If the EnableforAll quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of OSI ("Darwin") is sufficient. 
-
-<div align=center>
-
-![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
-
-</div>
-
-> **Note**: This require `ACPI` / `Quirks` / `EnableforAll` = `Yes` and `Booter` / `Quirks` / `EnableforAll` = `Yes` via config.plist. So, you may set `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `No` and `PlatformInfo` / `UpdateSMBIOSMode` = `Create` via config.plist. Checkout my [SSDT-EXTNOACPI](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXTNOACPI.dsl) as an example.
+<br>
 
 ---
 
 ### Acknowledgement
 
 - [**Acidanthera**](https://github.com/acidanthera) for
+
 ```zsh
 git clone https://github.com/acidanthera/OpenCorePkg.git
 ```
 
-- [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) for 
+- [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) for
+
 ```zsh
 git clone https://github.com/dortania/OpenCore-Install-Guide.git
 ```
 
 - [**headkaze**](https://github.com/headkaze) for
+
 ```zsh
 git clone https://github.com/headkaze/Hackintool.git
 ```
