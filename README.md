@@ -22,9 +22,7 @@ Open [Clover Configurator](https://mackie100projects.altervista.org/download-clo
 
 </div>
 
-If you are not using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/), you can use any plist editor to open the config.plist. Find:
-
-`ACPI / DSDT / Fixes / FixDarwin = YES`.
+If you are not using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/), you can use any plist editor to open the config.plist. Find `ACPI / DSDT / Fixes / FixDarwin = YES`.
 
 <div align=center>
 
@@ -145,15 +143,15 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 - Run Terminal
 - Drag the executable unix file disklabel (not the .exe) into the Terminal and hit Enter. Below is sample command to disk labeling:
 
-  ```zsh
-  -e "nameofyourdisk" .disk_label .disk_label_2x
-  ```
+```zsh
+-e "nameofyourdisk" .disk_label .disk_label_2x
+```
 
 - The complete line should look like below:
 
-  ```zsh
-  -e "Winslow" .disk_label .disk_label_2x
-  ```
+```zsh
+-e "Winslow" .disk_label .disk_label_2x
+```
 
 - Hit enter
 
