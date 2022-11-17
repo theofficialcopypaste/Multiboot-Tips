@@ -2,10 +2,10 @@
 
 **Lists**
 
-* [Prevent ACPI infusion on other operating systems](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
-* [Unmount non-supported storage formats automatically](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#unmount-unsupported-storage)
-* [Changing the Windows label in the bootpicker ](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#changing-windows-disk-label-in-bootpicker)
-* [UTC fix](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#fix-clock-on-multiboot)
+* [Prevent ACPI infusion on other operating systems](https://github.com/theofficialcopypaste/Multiboot-Tips#prevent-acpi-infusion-on-other-operating-systems)
+* [Unmount non-supported storage formats automatically](https://github.com/theofficialcopypaste/Multiboot-Tips#unmount-non-supported-storage-formats-automatically)
+* [Changing the Windows label in the bootpicker](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-the-windows-label-in-the-bootpicker)
+* [UTC fix](https://github.com/theofficialcopypaste/Multiboot-Tips#utc-fix)
 
 ------------
 
