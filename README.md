@@ -4,7 +4,7 @@
 
 ## Jump!
 
-* [Prevent ACPI isues on Multiboot (Windows + macOS)](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
+* [Prevent ACPI isues on Multiboot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
 * [Unmount Unsupport Storage](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#unmount-unsupported-storage)
 * [Changing Windows Label on BootPicker](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#changing-windows-disk-label-in-bootpicker)
 
@@ -121,11 +121,6 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 ~
 ~
 ~
-~
-~
-~
-~
-~
 ```
 
 - Hit `Esc` to stop editing and press `Shift + ZZ` (double capital Z) to exit `vifs`
@@ -187,7 +182,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 ---
 
-### Fix Clock on Multiboot (most common, MacOS + Windows)
+### Fix Clock on Multiboot
 
 #### How do I fix this?
 
