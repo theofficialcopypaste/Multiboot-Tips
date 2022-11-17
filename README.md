@@ -4,7 +4,7 @@
 
 ## Jump!
 
-* [Prevent ACPI siisues on Multiboot (Windows + macOS)](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
+* [Prevent ACPI isues on Multiboot (Windows + macOS)](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
 * [Unmount Unsupport Storage](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#unmount-unsupported-storage)
 * [Changing Windows Label on BootPicker](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#changing-windows-disk-label-in-bootpicker)
 
