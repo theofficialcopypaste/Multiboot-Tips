@@ -1,6 +1,6 @@
 # Hackintosh Multiboot Tips
 
-## Prevent ACPI issues on multiboot (Windows + macOS)
+## Prevent ACPI issues on Multiboot (Windows + macOS)
 
 Several steps must be taken to prevent modded ACPI from being injected into other operating systems:
 
