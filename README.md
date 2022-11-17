@@ -30,7 +30,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 ![FixD](https://user-images.githubusercontent.com/72515939/202375889-3fb50eea-8d79-496c-91ff-8ff1db673a25.png)
 
-#### Official OpenCore
+#### OpenCore
 ##### OSI implementation
 
 The `If _OSI ("Darwin")` is an implementation method to call Darwin kernel use by macOS. reason to use this implementation.
