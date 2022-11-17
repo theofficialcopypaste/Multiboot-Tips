@@ -1,5 +1,7 @@
 # Hackintosh Multiboot Tips
 
+---
+
 ## Jump!
 
 * [Prevent ACPI siisues on Multiboot (Windows + macOS)](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/README.md#prevent-acpi-issues-on-multiboot-windows--macos)
