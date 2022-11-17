@@ -93,7 +93,7 @@ The command `vifs` is a utility to safely edit the /etc/fstab file—the configu
 
 <div align=center>
 
-<img width="700" alt="2022-10-11_04-51-31" src="https://user-images.githubusercontent.com/72515939/194950887-fb8b0de2-eec9-4872-9223-a49d55d96e1e.png">
+![UUID](https://user-images.githubusercontent.com/72515939/202383431-9a3a26d5-a46b-4db6-be97-5f5ef0fe834b.png)
 
 </div>
 
