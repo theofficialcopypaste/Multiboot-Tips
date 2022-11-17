@@ -34,9 +34,9 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 ### Official OpenCore
 
-#### Method: Enable If \_OSI ("Darwin")
+#### Method: Enable `If _OSI ("Darwin")`
 
-To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems from injecting modified `.aml` scripts. This is because macOS requirements are sometimes different from those of other operating systems. Below is an example:
+To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems conflicted with modified `.aml` scripts. This is because macOS approach is different from those of other operating systems. Below is an example:
 
 <div align=center>
 
