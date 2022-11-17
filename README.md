@@ -82,9 +82,9 @@ If the EnableforAll quirks function is injected via config.plist, OpenCore Mod d
 
 #### Why vifs?
 
-The command `vifs` is a utility to safely edit the /etc/fstab file—the configuration file we are going to tell to not mount our partition. The `vi` part is actually from the fact that we are using the text editor `vi` to change our file.
+The command `vifs` is a utility to safely edit the `etc` / `fstab` file—the configuration file we are going to tell to not mount our partition. The `vi` part is actually from the fact that we are using the text editor `vi` to change our file.
 
-> **Note**: Apple recommend `vifs` over `vim/other capable` editing apps to prevent an issue
+> **Note**: Apple recommend `vifs` over `vim` editing apps to prevent an issue
 
 #### Recommended Method:
 
@@ -141,7 +141,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto // macOS APFS
 ### Generating disk label files
 
 - Download the latest [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases) and unzip it
-- Find `/Utilities/disklabel` inside OpenCore folder
+- Find `Utilities` / `disklabel` inside OpenCore folder
 - Run Terminal
 - Drag the executable unix file disklabel (not the .exe) into the Terminal and hit Enter. Below is sample command to disk labeling:
 
@@ -207,7 +207,7 @@ The disk label files will be stored in your home folder but they are hidden
 </div><br>
 
 - Boot to Windows.
-- Merge or double click WinUTCOn.reg to install and enable registry.
+- Merge or double click` WinUTCOn.reg` to install and enable registry.
 - Reboot to macOS and Windows to make sure the clock is properly sync via UTC.
 
 > **Note**: Please set back exact time online via Windows or Mac.
