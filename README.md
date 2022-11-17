@@ -36,7 +36,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 #### Method: Enable If \_OSI ("Darwin")
 
-To enable If \_OSI ("Darwin"), modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems from injecting modified `.aml` scripts. This is because macOS requirements are sometimes different from those of other operating systems. Below is an example:
+To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument to the entire patch. This is to prevent both operating systems from injecting modified `.aml` scripts. This is because macOS requirements are sometimes different from those of other operating systems. Below is an example:
 
 <div align=center>
 
@@ -51,7 +51,7 @@ To enable If \_OSI ("Darwin"), modded SSDTs need to be added with this argument 
 
 #### Method: EnableforAll
 
-If the EnableforAll quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of OSI ("Darwin") is sufficient.
+If the `EnableforAll` quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of If OSI ("Darwin") is sufficient.
 
 <div align=center>
 
