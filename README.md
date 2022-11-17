@@ -51,7 +51,7 @@ To enable `If _OSI ("Darwin")`, modded SSDTs need to be added with this argument
 
 #### Method: EnableforAll
 
-If the `EnableforAll` quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of If OSI ("Darwin") is sufficient.
+If the `EnableforAll` quirks function is injected via config.plist, OpenCore Mod does not inject ACPI on other operating systems. Using SSDTs in the absence of `If _OSI ("Darwin")` is sufficient.
 
 <div align=center>
 
