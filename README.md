@@ -35,7 +35,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 #### OpenCore
 ##### OSI implementation
 
-The `If _OSI ("Darwin")` is an implementation method to call Darwin kernel use by macOS. reason to use this implementation.
+`If _OSI ("Darwin")` is an implementation method to call Darwin kernel use by macOS. reason to use this implementation.
 
 * To prevent both operating systems conflicted with modified SSDT.
 * To ensure device working properly on multiple OS.
