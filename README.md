@@ -40,7 +40,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 * To prevent both operating systems conflicted with modified SSDT.
 * To ensure device working properly on multiple OS.
 
-> **Note**: Without `If _OSI ("Darwin")` implementation, Windows will boot as usual. However, certain device will not function properly such as mouse, keyboar and USB's Webcam. 
+> **Note**: Without `If _OSI ("Darwin")` implementation, Windows will boot as usual. However, certain device will not function properly such as mouse, keyboard and USB's Webcam. 
 
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
@@ -120,7 +120,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 ![UUID](https://user-images.githubusercontent.com/72515939/198338330-84c4f1bd-eb19-4709-b6d8-1ed3e88abd7e.png)
 
-> **Note**: Using vifs is recommended by Apple
+> **Note**: Using `vifs` is recommended by Apple. For Linux, storage with "ext4" and "btrfs" unmounts automatically. So, no need to worry about it. This method is not relevant for this format.
 
 ------------
 
@@ -140,7 +140,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 - The complete line should look like below:
 
 ```zsh
--e "Window" .disk_label .disk_label_2x
+-e "Windows" .disk_label .disk_label_2x
 ```
 
 - Hit enter
@@ -158,10 +158,8 @@ The disk label files will be stored in your home folder but they are hidden
 ##### Adjusting PickerAttributes
 
 - Open your [config.plist](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) using [OCAT](https://github.com/ic005k/OCAuxiliaryTools)
-- Go to Misc/PickerAttributes and click on Select (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`
-- Save and Reboot
-
-> **Note**: Credits to [5T33Z0](https://github.com/5T33Z0), for writing this to us
+- Go to Misc/PickerAttributes and click on Select (or just add 2 to the current value), Check `OC_ATTR_USE_DISK_LABEL_FILE`.
+- Save and Reboot.
 
 ------------
 
