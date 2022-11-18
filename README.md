@@ -62,7 +62,7 @@ OpenCore Mod does not inject ACPI on other OS systems if the "EnableforAll" quir
 
 Always mounting non-supported storage may:
 
-- shorten the storage lifespan
+- shorten the storage lifespan.
 - cause read / write error.
 
 This solution prevents the Mac from automatically mounting NTFS. This is essential for using **vifs** when editing the **fstab**.
@@ -73,7 +73,6 @@ This solution prevents the Mac from automatically mounting NTFS. This is essenti
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Supported   | APFS, APFS (Encrypted), APFS (Case-sensitive), APFS (Case-sensitive, Encrypted), Mac OS Extended (Journaled), Mac OS Extended (Journaled, Encrypted), Mac OS Extended (Case-sensitive, Journaled), Mac OS Extended (Case-sensitive, Journaled, Encrypted), MS-DOS (FAT) and ExFAT |
 | Unsupported | Ext, Ext2, Ext3, Ext4, JFS, ReiserFS, XFS, btrfs, swap, ReFS and NTFS                                                                                                                                                                                                             
-
 #### The fstab
 
 - configuration table designed to ease the burden of mounting and unmounting file systems to a machine.
@@ -86,17 +85,15 @@ The fstab allows the user to avoid load order errors that could eat up valuable 
 - utility to safely edit the `etc` / `fstab` file—the configuration file we are going to tell to not mount our partition. 
 - it is actually from the fact that we are using the text editor `vi` to change our file.
 
-> **Note**: Apple recommend `vifs` over `vim` editing apps to prevent an issue
-
 ##### Method:
 
-- Open `Disk Utility` &rarr; `Info`
-- Find `File System UUID` and `copy UUID value` by using `cmd + c`
+- Open `Disk Utility` &rarr; `Info`.
+- Find `File System UUID` and `copy UUID value` by using `cmd + c`.
 
 ![UUID](https://user-images.githubusercontent.com/72515939/202383431-9a3a26d5-a46b-4db6-be97-5f5ef0fe834b.png)
 
-- Type `sudo vifs` on mac terminal
-- Press `o` to edit /etc/fstab
+- Type `sudo vifs` on mac terminal.
+- Press `o` to edit /etc/fstab.
 - Add `UUID="Volume UUID" none ntfs rw,noauto`.
 
 Example:
@@ -149,11 +146,11 @@ The disk label files will be stored in your home folder but they are hidden
 
 ##### Moving the files to the correct location
 
-- In Finder, got to your Home Folder
-- Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`
-- As example, Windows EFI partition. Mount the EFI containing the "Microsoft" Folder
+- Use Finder, got to your Home Folder.
+- Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
+- As example, Windows EFI partition. Mount the EFI containing the "Microsoft" Folder.
 - Paste/Move the `.disk_label` and `.disk_label_x2` label files into the Microsoft/Boot folder.
-- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes`
+- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes`.
 
 ##### Adjusting PickerAttributes
 
@@ -171,13 +168,13 @@ Solution to fix clock for macOS and Windows
 
 If you work across time zones, it's important to understand UTC. UTC is the standard of time used all around the world to 
 
-- regulate clocks and
-- effectively the "center" of our timekeeping
+- regulate clocks and...
+- effectively the "center" of our timekeeping.
 
 ##### Hackintool
 
-- Boot to macOS
-- Open [Hackintool](https://github.com/headkaze/Hackintool) and go to Utilities
+- Boot to macOS.
+- Open [Hackintool](https://github.com/headkaze/Hackintool) and go to Utilities.
 
 ![Utilities](https://user-images.githubusercontent.com/72515939/202380813-0753ac51-31ae-4ece-9b69-5830b13e3416.png)
 
@@ -185,7 +182,7 @@ If you work across time zones, it's important to understand UTC. UTC is the stan
 
 ![Utilities2](https://user-images.githubusercontent.com/72515939/202380902-3d2eb0c4-ed45-4154-9afd-4422febe224c.png)
 
-- Registry key will be exported as
+- Registry key will be exported as:
 
 | File  | Key |
 | ------------ | ------------ |
