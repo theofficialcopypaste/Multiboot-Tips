@@ -40,6 +40,8 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 * To prevent both operating systems conflicted with modified SSDT.
 * To ensure device working properly on multiple OS.
 
+> **Note**: Without `If _OSI ("Darwin")` implementation, Windows will boot as usual. However, certain device will not function properly such as mouse, keyboar and USB's Webcam. 
+
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
