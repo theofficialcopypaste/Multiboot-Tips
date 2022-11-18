@@ -87,7 +87,7 @@ The fstab allows the user to avoid load order errors that could eat up valuable 
 ##### Method:
 
 - Open `Disk Utility` &rarr; `Info`
-- Find `File System UUID` and `copy UUID value`
+- Find `File System UUID` and `copy UUID value` by using `cmd + c`
 
 ![UUID](https://user-images.githubusercontent.com/72515939/202383431-9a3a26d5-a46b-4db6-be97-5f5ef0fe834b.png)
 
