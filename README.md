@@ -78,7 +78,7 @@ This solution prevents the Mac from automatically mounting NTFS. This is essenti
 - configuration table designed to ease the burden of mounting and unmounting file systems to a machine.
 - set of rules used to control how different filesystems are treated each time they are introduced to a system. 
 
-The fstab allows the user to avoid load order errors that could eat up valuable time and energy
+The fstab allows the user to avoid load order errors that could eat up valuable time and energy.
 
 #### The vifs
 
