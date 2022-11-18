@@ -30,7 +30,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 ![FixD](https://user-images.githubusercontent.com/72515939/202375889-3fb50eea-8d79-496c-91ff-8ff1db673a25.png)
 
-> **Note**: You are encourage to use SSDT's which return with 0xFF and Zero function by using this bootloader. Change DSDT name in ACPI section from `DSDT.aml` to `BIOS.aml` also reduce `asl` clutters (only when users patch DSDT's using Clover option, not recommend if using modding DSDT). Check **Automerge** option to set all separate SSDT's patches merge with `BIOS.aml`.
+> **Note**: You are encourage to use SSDT's which return with `0xFF` and `Zero` function by using this bootloader. Change DSDT name in ACPI section from `DSDT.aml` to `BIOS.aml` also reduce `asl` clutters (only when users patch DSDT's using Clover option, not recommend if using modding DSDT). Check **Automerge** option to set all separate SSDT's patches merge with `BIOS.aml`.
 
 #### OpenCore
 ##### OSI implementation
