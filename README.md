@@ -50,7 +50,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 #### OpenCore Mod
 ##### EnableforAll approach
 
-OpenCore Mod does not inject ACPI on other OS systems if the "EnableforAll" quirks are enabled via config.plist. Then, using SSDTs without `If _OSI ("Darwin")` implementation is sufficient.
+OpenCore Mod does not inject ACPI on other OS systems if the "EnableforAll" quirks are enabled via config.plist. Using SSDTs without `If _OSI ("Darwin")` implementation is sufficient.
 
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 
