@@ -30,6 +30,8 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 ![FixD](https://user-images.githubusercontent.com/72515939/202375889-3fb50eea-8d79-496c-91ff-8ff1db673a25.png)
 
+> **Note**: You are encourage to use SSDT's which return with 0xFF and Zero function by using this bootloader. Change DSDT name in ACPI section from DSDT.aml to BIOS.aml also reduce lot of `asl` clutters (without DSDT modding)
+
 #### OpenCore
 ##### OSI implementation
 
@@ -41,7 +43,7 @@ The `If _OSI ("Darwin")` is an implementation method to call Darwin kernel use b
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
-> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Checkout my [SSDT-EXT_info](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT_info.dsl) for an explanation. However, you are encourage to use SSDT's which return with 0xFF and Zero function. 
+> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Checkout my [SSDT-EXT_info](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT_info.dsl) for an explanation. 
 
 #### OpenCore Mod
 ##### EnableforAll approach
