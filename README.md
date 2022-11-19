@@ -16,7 +16,7 @@ Several steps must be taken to prevent modded ACPI from being injected into othe
 | Bootloader        | Method                                                                   		  |
 | ----------------- | ----------------------------------------------------------------------------------- |
 | Clover            | Fix `Darwin Option`                                                        	  |
-| Official OpenCore | `If \_OSI ("Darwin")` via ACPI, `CustomSMBIOSGuid` and `UpdateSMBIOSMode` Quirks.   |
+| OpenCore          | `If \_OSI ("Darwin")` via ACPI, `CustomSMBIOSGuid` and `UpdateSMBIOSMode` Quirks.   |
 | OpenCore Mod      | `EnableforAll` Quirks                                                       	  |
 
 #### Clover
