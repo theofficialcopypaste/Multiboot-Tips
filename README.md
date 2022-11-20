@@ -148,8 +148,8 @@ The disk label files will be stored in your home folder but they are hidden
 
 - Use Finder, got to your Home Folder.
 - Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
-- As example, Windows EFI partition. Mount the EFI containing the "Microsoft" Folder.
-- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the Microsoft/Boot folder.
+- As example, Windows EFI partition. Mount the EFI containing the `Microsoft` Folder.
+- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft` / `Boot` folder.
 - Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes`.
 
 ##### Adjusting PickerAttributes
