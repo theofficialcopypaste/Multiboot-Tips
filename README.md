@@ -19,6 +19,13 @@ Several steps must be taken to prevent modded ACPI from being injected into othe
 | OpenCore          | `If \_OSI ("Darwin")` via ACPI, `CustomSMBIOSGuid` and `UpdateSMBIOSMode` Quirks.   |
 | OpenCore Mod      | `EnableforAll` Quirks                                                       	  |
 
+### References:
+
+* [SSDT-EXT Multiboot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl)
+* [SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl)
+* [SSDT Modular](https://github.com/theofficialcopypaste/Multiboot-Tips/tree/main/SSDT's%20Sample/SSDT-Modular)
+
+
 #### Clover
 ##### Fix Darwin option
 
