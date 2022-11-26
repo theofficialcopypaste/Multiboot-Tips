@@ -45,7 +45,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
-> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Checkout my [SSDT-EXT-Multi_Boot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl) for an explanation. 
+> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. 
 
 #### OpenCore Mod
 ##### EnableforAll approach
@@ -54,7 +54,7 @@ OpenCore Mod does not inject ACPI on other OS systems if the "EnableforAll" quir
 
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 
-> **Note**: This require `ACPI` / `Quirks` / `EnableforAll` = `Yes` and `Booter` / `Quirks` / `EnableforAll` = `Yes` via config.plist. So, you may set `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `No` and `PlatformInfo` / `UpdateSMBIOSMode` = `Create` via config.plist. Checkout my [SSDT-EXT-Single_Boot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Single%20Boot.dsl) as an example.
+> **Note**: This require `ACPI` / `Quirks` / `EnableforAll` = `Yes` and `Booter` / `Quirks` / `EnableforAll` = `Yes` via config.plist. So, you may set `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `No` and `PlatformInfo` / `UpdateSMBIOSMode` = `Create` via config.plist.
 
 ------------
 
