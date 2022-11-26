@@ -25,7 +25,6 @@ Several steps must be taken to prevent modded ACPI from being injected into othe
 * [SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl) if single OS Installed
 * [SSDT Modular](https://github.com/theofficialcopypaste/Multiboot-Tips/tree/main/SSDT's%20Sample/SSDT-Modular) if multiple OS Installed (Modular)
 
-
 #### Clover
 ##### Fix Darwin option
 
@@ -37,7 +36,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 
 ![FixD](https://user-images.githubusercontent.com/72515939/202375889-3fb50eea-8d79-496c-91ff-8ff1db673a25.png)
 
-> **Note**: You are encourage to use SSDT's which return with `0xFF` and `Zero` function by using this bootloader. Change DSDT name in ACPI section from `DSDT.aml` to `BIOS.aml` also reduce `asl` clutters (only when users patch DSDT's using Clover option, not recommend if using modding DSDT). Mark **Automerge** option to set all separate SSDT's patches merge with `BIOS.aml`. Refer the 1st images above.
+> **Note**: You are encourage to use SSDT's which return with `0xFF` and `Zero` function by using this bootloader. Change DSDT name in ACPI section from `DSDT.aml` to `BIOS.aml` also reduce `asl` clutters (only when users patch DSDT's using Clover option, not recommend if using modding DSDT). Mark **Automerge** option to set all separate SSDT's patches merge with `BIOS.aml`. Refer the 1st images above. Recommend SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl)
 
 #### OpenCore
 ##### OSI implementation
@@ -52,7 +51,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
-> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. 
+> **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Recommend [SSDT-EXT Multiboot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl) or [SSDT Modular](https://github.com/theofficialcopypaste/Multiboot-Tips/tree/main/SSDT's%20Sample/SSDT-Modular)
 
 #### OpenCore Mod
 ##### EnableforAll approach
@@ -61,7 +60,7 @@ OpenCore Mod does not inject ACPI on other OS systems if the "EnableforAll" quir
 
 ![Without](https://user-images.githubusercontent.com/72515939/202378334-31785783-1eeb-4bc1-82e8-03ccb90e4a6c.png)
 
-> **Note**: This require `ACPI` / `Quirks` / `EnableforAll` = `Yes` and `Booter` / `Quirks` / `EnableforAll` = `Yes` via config.plist. So, you may set `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `No` and `PlatformInfo` / `UpdateSMBIOSMode` = `Create` via config.plist.
+> **Note**: This require `ACPI` / `Quirks` / `EnableforAll` = `Yes` and `Booter` / `Quirks` / `EnableforAll` = `Yes` via config.plist. So, you may set `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `No` and `PlatformInfo` / `UpdateSMBIOSMode` = `Create` via config.plist. SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl)
 
 ------------
 
