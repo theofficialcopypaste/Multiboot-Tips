@@ -21,9 +21,9 @@ Several steps must be taken to prevent modded ACPI from being injected into othe
 
 ### References:
 
-* [SSDT-EXT Multiboot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl)
-* [SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl)
-* [SSDT Modular](https://github.com/theofficialcopypaste/Multiboot-Tips/tree/main/SSDT's%20Sample/SSDT-Modular)
+* [SSDT-EXT Multiboot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl) if multiple OS Installed
+* [SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl) if single OS Installed
+* [SSDT Modular](https://github.com/theofficialcopypaste/Multiboot-Tips/tree/main/SSDT's%20Sample/SSDT-Modular) if multiple OS Installed (Modular)
 
 
 #### Clover
