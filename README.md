@@ -128,6 +128,8 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 ### Changing other OS label in the bootpicker 
 
+> **Note**: This require GPT Format Opratin System with EFI Partition.
+
 #### Generating disk label
 
 - Download the latest [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases) and unzip it
