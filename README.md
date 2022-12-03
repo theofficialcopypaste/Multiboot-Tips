@@ -25,6 +25,7 @@ Several steps must be taken to prevent modded ACPI from being injected into othe
 * [SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Single%20Boot.dsl) if single OS 
 
 #### Clover
+
 ##### Fix Darwin option
 
 Open [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and look and mark for the **Fix Darwin** option in ACPI Section, which is equivalent to the `If OSI ("Darwin")` argument and save `config.plist`.
@@ -38,6 +39,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 > **Note**: You are encourage to use SSDT's which return with `0xFF` and `Zero` function by using this bootloader. Change DSDT name in ACPI section from `DSDT.aml` to `BIOS.aml` also reduce `asl` clutters (only when users patch DSDT's using Clover option, not recommend if using modding DSDT). Mark **Automerge** option to set all separate SSDT's patches merge with `BIOS.aml`. Refer the 1st images above. Recommend [SSDT-EXT SingleBoot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Single%20Boot.dsl)
 
 #### OpenCore
+
 ##### OSI implementation
 
 `If _OSI ("Darwin")` is an implementation method to call Darwin kernel use by macOS. Reason to use this implementation.
@@ -53,6 +55,7 @@ If you are not using [Clover Configurator](https://mackie100projects.altervista.
 > **Note**: This require `Kernel` / `Quirks` / `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` / `UpdateSMBIOSMode` = `Custom` via config.plist. Recommend [SSDT-EXT Multiboot](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT's%20Sample/SSDT-EXT-Multi%20Boot.dsl)
 
 #### OpenCore Mod
+
 ##### EnableforAll approach
 
 OpenCore Mod does not inject ACPI on other OS systems if the "EnableforAll" quirks are enabled via config.plist. Using SSDTs without `If _OSI ("Darwin")` implementation is sufficient.
@@ -102,6 +105,7 @@ The fstab allows the user to avoid load order errors that could eat up valuable 
 - Add `UUID="Volume UUID" none ntfs rw,noauto`.
 
 Example:
+
 ```zsh
 #
 # Warning - this file should only be modified with vifs(8)
@@ -128,12 +132,12 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 ### Changing other OS label in the bootpicker 
 
-> **Note**: This require GPT format Operating System with EFI Partition.
+> **Note**: This require `GPT` format Operating System with `EFI` partition. This can be done in macOS.
 
 #### Generating disk label
 
 - Download the latest [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases) and unzip it
-- Find `Utilities` / `disklabel.exe` inside OpenCore folder
+- Find `Utilities` / `disklabel` (unix executable file) inside OpenCore folder
 - Run Terminal
 - Drag the executable unix file disklabel (not the .exe) into the Terminal and hit Enter. Below is sample command to disk labeling:
 
@@ -144,7 +148,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 - The complete line should look like below:
 
 ```zsh
--e "Windows" .disk_label .disk_label_2x
+-e "Arch" .disk_label .disk_label_2x
 ```
 
 - Hit enter
@@ -156,8 +160,10 @@ The disk label files will be stored in your home folder but they are hidden
 - Use Finder, got to your Home Folder.
 - Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
 - As example, Windows EFI partition. Mount the EFI containing the `Microsoft` Folder.
-- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft` / `Boot` folder.
-- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes`.
+- Paste/Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft` / `Boot` folder. If Linux, move to `EFI` / `boot`, which is the same path where `bootx64.efi` located.
+- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes` on your config.plist.
+
+![Settings](https://user-images.githubusercontent.com/72515939/205451151-2ab41327-dc53-489d-a2f0-0578331d2f77.png)
 
 ##### Adjusting PickerAttributes
 
