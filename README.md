@@ -153,7 +153,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 - Hit enter
 
-The disk label files will be stored in your home folder but they are hidden
+The disk label files will be stored in your home folder but they are hidden. Use "`cmd` + `shift` + `>`" to reveal and use the same command to hide it back.
 
 ##### Moving the files to the correct location
 
