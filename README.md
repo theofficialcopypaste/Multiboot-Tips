@@ -128,7 +128,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 ### Changing other OS label in the bootpicker 
 
-> **Note**: This require GPT Format Oprating System with EFI Partition.
+> **Note**: This require GPT format Operating System with EFI Partition.
 
 #### Generating disk label
 
