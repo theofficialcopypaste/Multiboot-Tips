@@ -126,7 +126,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 ------------
 
-### Changing the Windows label in the bootpicker 
+### Changing the other OS'es label in the bootpicker 
 
 #### Generating disk label
 
@@ -156,46 +156,6 @@ The disk label files will be stored in your home folder but they are hidden
 - As example, Windows EFI partition. Mount the EFI containing the `Microsoft` Folder.
 - Paste/Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft` / `Boot` folder.
 - Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes`.
-
-
-### Changing the Linux label in the bootpicker 
-
-* Similar as step above, [Generating Disk Label](https://github.com/theofficialcopypaste/Multiboot-Tips#generating-disk-label) by using `disklabel.linux`.
-
-```zsh
-cd <location>/OpenCore-0.8.6-RELEASE/Utilities/disklabel 
-```
-
-* and type
-
-```zsh
-./disklabel.linux 
-```
-
-* you may see usage command (help)
-
-```zsh
-Usage:
- disklabel -d .disk_label image.ppm!
- disklabel -e "Label" .disk_label .disk_label_2x
- disklabel -bgra "Label" .disk_label .disk_label_2x
-```
-
-* and...
-
-```zsh
-disklabel -e "Arch" .disk_label .disk_label_2x
-```
-
-* Move `.disk_label` and `.disk_label_2x` to Linux EFI partition. In my case my EFI partition is `/dev/nvme0n1p1` to `/mnt` volume
-
-```zsh
-sudo mount /dev/nvme0n1p1 /mnt 
-```
-
-![Screenshot_20221204_000515](https://user-images.githubusercontent.com/72515939/205450287-26fd0149-b313-41b8-a862-3ad99cc690c0.png)
-
-> **Note**: use any `root` / `sudo` capable and move both file to `distro` folder.
 
 ##### Adjusting PickerAttributes
 
