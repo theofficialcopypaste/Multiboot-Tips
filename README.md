@@ -4,7 +4,7 @@
 
 * [Prevent ACPI infusion on other operating systems](https://github.com/theofficialcopypaste/Multiboot-Tips#prevent-acpi-infusion-on-other-operating-systems)
 * [Unmount non-supported storage formats automatically](https://github.com/theofficialcopypaste/Multiboot-Tips#unmount-non-supported-storage-formats-automatically)
-* [Changing the Windows label in the bootpicker](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-the-windows-label-in-the-bootpicker)
+* [Changing other OS'es label in the bootpicker](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-the-windows-label-in-the-bootpicker)
 * [UTC fix](https://github.com/theofficialcopypaste/Multiboot-Tips#utc-fix)
 
 ------------
