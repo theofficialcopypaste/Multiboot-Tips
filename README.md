@@ -4,7 +4,7 @@
 
 * [Prevent ACPI infusion on other operating systems](https://github.com/theofficialcopypaste/Multiboot-Tips#prevent-acpi-infusion-on-other-operating-systems)
 * [Unmount non-supported storage formats automatically](https://github.com/theofficialcopypaste/Multiboot-Tips#unmount-non-supported-storage-formats-automatically)
-* [Changing other OS'es label in the bootpicker](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-the-windows-label-in-the-bootpicker)
+* [Changing other OS label in the bootpicker](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-the-windows-label-in-the-bootpicker)
 * [UTC fix](https://github.com/theofficialcopypaste/Multiboot-Tips#utc-fix)
 
 ------------
@@ -126,7 +126,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 ------------
 
-### Changing other OS'es label in the bootpicker 
+### Changing other OS label in the bootpicker 
 
 #### Generating disk label
 
