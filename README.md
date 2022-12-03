@@ -160,7 +160,7 @@ The disk label files will be stored in your home folder but they are hidden
 
 ### Changing the Linux label in the bootpicker 
 
-* Similar as step above, [Generating Disk Label on Windows](https://github.com/theofficialcopypaste/Multiboot-Tips#generating-disk-label) by using `disklabel.linux`.
+* Similar as step above, [Generating Disk Label](https://github.com/theofficialcopypaste/Multiboot-Tips#generating-disk-label) by using `disklabel.linux`.
 
 ```zsh
 cd <location>/OpenCore-0.8.6-RELEASE/Utilities/disklabel 
