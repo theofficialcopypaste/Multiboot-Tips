@@ -126,7 +126,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 ------------
 
-### Changing the other OS'es label in the bootpicker 
+### Changing other OS'es label in the bootpicker 
 
 #### Generating disk label
 
