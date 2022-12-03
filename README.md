@@ -153,15 +153,15 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 - Hit enter
 
-The disk label files will be stored in your home folder but they are hidden. Use "`cmd` + `shift` + `>`" to reveal and use the same command to reverse hiding.
+The disk label files will be stored in your home folder but they are hidden. 
 
 ##### Moving the files to the correct location
 
 - Use Finder, got to your Home Folder.
-- Press `Cmd+Shift+.` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
+- Press "`cmd` + `shift` + `>`" to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
 - As example, Windows EFI partition. Mount the EFI containing the `Microsoft` Folder.
 - Paste/Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft` / `Boot` folder. If Linux, move to `EFI` / `boot`, which is the same path where `bootx64.efi` located.
-- Press `Cmd+Shift+.` again to mask the hidden files. Now, adjust `PickerAttributes` on your config.plist.
+- Press "`cmd` + `shift` + `>`" again to mask the hidden files. Now, adjust `PickerAttributes` on your config.plist.
 
 ![Settings](https://user-images.githubusercontent.com/72515939/205451151-2ab41327-dc53-489d-a2f0-0578331d2f77.png)
 
