@@ -161,8 +161,8 @@ git clone https://github.com/acidanthera/OpenCorePkg.git
 git clone https://github.com/dortania/OpenCore-Install-Guide.git
 ```
 
-- [**headkaze**](https://github.com/headkaze) for
+- [**benbaker76**](https://github.com/benbaker76) for
 
 ```zsh
-git clone https://github.com/headkaze/Hackintool.git
+https://github.com/benbaker76/Hackintool.git
 ```
