@@ -54,7 +54,7 @@ This solution prevents the mac's automatically mounting the NTFS file format by 
 # Failure to do so is unsupported and may be destructive.
 #
 UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto	// Windows
-UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none hfs rw,noauto	 // macOS HFS+
+UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none hfs rw,noauto	// macOS HFS+
 UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 ~
 ~
