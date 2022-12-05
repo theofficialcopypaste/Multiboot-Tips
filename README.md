@@ -8,6 +8,40 @@
 - [UTC](https://github.com/theofficialcopypaste/Multiboot-Tips#utc)
 
 ---
+### Tips:
+
+#### Installation
+
+To perform multiboot install operating system, you need to consider one thing:
+ * Which OS first to install?
+ * What is current OS you have?
+  
+If your current OS is Windows, you may proceed to install macOS regularly as guided by Dortania. If Linux, same procedure. The problem is if you already has macOS installed. Windows will overwrite `EFI` partition if you not unplugged manually `SATA` or `NVME` which contain Linux and macOS. 
+
+#### What is the best procedure?
+
+The best way is to install Windows first since macOS and Linux don't overwrite `EFI` partition. This methos is not applicable to Bootcamp. Separate disk is encourage.
+
+#### Multiple USB Installation creation.
+
+Using Ventoy as multiboot installation tool is great alternative to prevent an issue. There is a way to combine all operating system (Windows / Linux / macOS). To create this tools, make sure you have Windows and Linux as current operating system before you are doing fresh install.
+
+#### Ventoy (Windows)
+
+* First, create Ventoy USB as GPT format
+* Spare at least 1.5GB space for other purpose. In this case, we spare the space for OpenCore purpose.
+* After ventoy installation, format 1.5GB spare space using DiskGenius as ESP partition format. Usually this will format the space as fat32.
+
+#### Ventoy (Linux)
+
+* Same procedure as above, install Ventoy first using the same format as mention above. 
+* Spare exactly the same space (1.5GB) to create extra EFI patition using gparted.
+
+#### Moving the file
+
+* Just move other operating system to the drive name Ventoy (Linux / Windows)
+* Move openCore `EFI` folder to pare 1.5GB extra EFI partition.
+* Move `com.apple.recovery.boot` exatcly at the same place where OpenCore `EFI` folder is located.
 
 ### Prevent ACPI Infusion on Other Operating Systems
 
