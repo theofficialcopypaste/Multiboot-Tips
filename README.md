@@ -44,6 +44,14 @@ Using Ventoy as multiboot installation tool is great alternative to prevent an i
 * Move openCore `EFI` folder to pare 1.5GB extra EFI partition.
 * Move `com.apple.recovery.boot` exatcly at the same place where OpenCore `EFI` folder is located.
 
+Below is an example:
+
+![Settings_1](https://user-images.githubusercontent.com/72515939/205746086-d9bc7e87-f176-498b-8f7e-3d26c5adeae6.png)
+![Settings_2](https://user-images.githubusercontent.com/72515939/205746100-85bfd440-196b-441c-b86b-436561cb154c.png)
+![Settings_3](https://user-images.githubusercontent.com/72515939/205746111-53cdc7f2-3fa7-4e4e-abb2-53faf539befa.png)
+
+---
+
 ### Prevent ACPI Infusion on Other Operating Systems
 
 The `If _OSI ("Darwin")` is an implementation method to call Darwin kernel used by macOS. Reason to use this implementation.
