@@ -8,7 +8,7 @@
 - [UTC](https://github.com/theofficialcopypaste/Multiboot-Tips#utc)
 
 ---
-### Tips:
+### Multiboot USB Procedure
 
 #### Installation
 
