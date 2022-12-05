@@ -17,7 +17,7 @@ To perform multiboot install operating system, you need to consider one thing:
  * Which OS first to install?
  * What is current OS you have?
   
-If your current OS is Windows, you may proceed to install macOS regularly as guided by Dortania. If Linux, same procedure. The problem is if you already has macOS installed. Windows will overwrite `EFI` partition if you not unplugged manually `SATA` or `NVME` which contain Linux and macOS. 
+If your current OS is Windows, you may proceed to install macOS regularly as guided by Dortania. If Linux, same procedure. The problem is if you already has macOS installed. Windows will overwrite `EFI` partition if you not unplugged manually `SATA` or `NVME` which contain Linux and macOS in installation process.
 
 #### What is the best procedure?
 
