@@ -12,7 +12,9 @@
 
 ### Multiboot USB Procedure
 
-This guide is not applicable to Bootcamp. Separate disk is encourage.
+![Screenshot_20221206_205233](https://user-images.githubusercontent.com/72515939/205917851-459df871-e66b-4fec-ae92-07f1bc2a5bba.png)
+
+This guide is not applicable to **Bootcamp**. Separate disk is encourage.
 
 #### Installation
 
