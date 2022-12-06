@@ -83,7 +83,7 @@ This guide is not applicable to Bootcamp. Separate disk is encourage.
 
     ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
-> **Note**: Additionally, combining SSDT with `_OSI` implementation + OpenCore quirks via `Kernel` > `Quirks` > `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` > `UpdateSMBIOSMode` = `Custom` is the best approach to multiboot. Refer [SSDT-EXTv2](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT/SSDT-EXTv2.dsl) as an example for `If _OSI ("Darwin")` implementation.
+    > **Note**: Additionally, combining SSDT with `_OSI` implementation + OpenCore quirks via `Kernel` > `Quirks` > `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` > `UpdateSMBIOSMode` = `Custom` is the best approach to multiboot. Refer [SSDT-EXTv2](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT/SSDT-EXTv2.dsl) as an example for `If _OSI ("Darwin")` implementation.
 
 ---
 
@@ -129,7 +129,7 @@ This guide is not applicable to Bootcamp. Separate disk is encourage.
 
     ![UUID](https://user-images.githubusercontent.com/72515939/198338330-84c4f1bd-eb19-4709-b6d8-1ed3e88abd7e.png)
 
-  > **Note**: Using `vifs` is recommended by Apple. For Linux, storage with "ext4" and "btrfs" unmounts automatically. So, no need to worry about it. This method is not relevant for this format.
+    > **Note**: Using `vifs` is recommended by Apple. For Linux, storage with "ext4" and "btrfs" unmounts automatically. So, no need to worry about it. This method is not relevant for this format.
 
 ---
 
