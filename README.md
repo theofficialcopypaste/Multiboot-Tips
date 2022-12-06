@@ -129,7 +129,7 @@ This guide is not applicable to Bootcamp. Separate disk is encourage.
 
     ![UUID](https://user-images.githubusercontent.com/72515939/198338330-84c4f1bd-eb19-4709-b6d8-1ed3e88abd7e.png)
 
-    > **Note**: Using `vifs` is recommended by Apple. For Linux, storage with "ext4" and "btrfs" unmounts automatically. So, no need to worry about it. This method is not relevant for this format.
+    > **Note**: Using `vifs` is recommended by Apple. For Linux, storage with `ext4` and `btrfs` unmounts automatically. So, no need to worry about it. This method is not relevant for this format.
 
 ---
 
