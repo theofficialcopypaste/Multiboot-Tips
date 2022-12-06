@@ -70,16 +70,14 @@ Below is an example:
 
 ### Prevent ACPI Infusion on Other Operating Systems
 
-The `If _OSI ("Darwin")` is an implementation method to call Darwin kernel used by macOS. Reason to use this implementation.
+* The `If _OSI ("Darwin")` is an implementation method to call Darwin kernel used by macOS. Please make sure compiled SSDT's is using `_OSI ("Darwin")` on all patched device. Reason to use this implementation is:
 
-- to provide the device `on/enable` and `off/disable` functions for different operating systems
-- to prevent `BSOD` issues when booting into Windows.
-
-The ACPI interface is not too complex for Linux. To resolve operating system issues, the majority of distribution use kernel patches submitted by developers.
+  * to provide the device `on/enable` and `off/disable` (variable) functions for different operating systems
+  * to prevent `BSOD` issues when booting into Windows.
 
 ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
-> **Note**: Additionally, combining SSDT with `_OSI` implementation + OpenCore quirks via `Kernel` > `Quirks` > `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` > `UpdateSMBIOSMode` = `Custom` is the best approach to dual- or multiboot.
+> **Note**: Additionally, combining SSDT with `_OSI` implementation + OpenCore quirks via `Kernel` > `Quirks` > `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` > `UpdateSMBIOSMode` = `Custom` is the best approach to multiboot.
 
 ---
 
