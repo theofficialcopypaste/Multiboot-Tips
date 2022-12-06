@@ -154,7 +154,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 * Moving the files to the correct location
 
   * Use Finder, got to your Home Folder.
-  * Press "`cmd` + `shift` + `>`" to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
+  * Press `cmd` + `shift` + `>` to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
   * Windows :
     * Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft`/`Boot` folder, the same path where `bootx64.efi` located.
   * Linux :
