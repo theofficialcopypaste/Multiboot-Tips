@@ -77,7 +77,7 @@ Below is an example:
 
 ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
-> **Note**: Additionally, combining SSDT with `_OSI` implementation + OpenCore quirks via `Kernel` > `Quirks` > `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` > `UpdateSMBIOSMode` = `Custom` is the best approach to multiboot.
+> **Note**: Additionally, combining SSDT with `_OSI` implementation + OpenCore quirks via `Kernel` > `Quirks` > `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` > `UpdateSMBIOSMode` = `Custom` is the best approach to multiboot. Refer [SSDT-EXTv2](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT/SSDT-EXTv2.dsl) as an example for `If _OSI ("Darwin")` implementation.
 
 ---
 
