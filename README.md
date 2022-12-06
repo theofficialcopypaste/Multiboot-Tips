@@ -46,7 +46,7 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
   * After ventoy installation, format 1.5GB spare space using [DiskGenius](www.diskgenius.com) as ESP partition format. Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Marked partition as `boot` & `ESP`.
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
   * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
-  * Move `com.apple.recovery.boot` ([Online Recovery on Windows](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer-in-windows)) exatcly at the same place where OpenCore `EFI` folder is located.
+  * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer-in-windows)) exatcly at the same place where OpenCore `EFI` folder is located.
 
 * Method 2: Ventoy (Linux)
 
@@ -57,7 +57,7 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
   
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
   * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
-  * Move `com.apple.recovery.boot` ([Online Recovery on Linux](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) exatcly at the same place where OpenCore `EFI` folder is located.
+  * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) exatcly at the same place where OpenCore `EFI` folder is located.
   
 * Both method will produce 3 partition:
   * VentoyEFI (Ventoy boot).
