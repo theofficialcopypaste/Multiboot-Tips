@@ -52,11 +52,12 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
 
   * Same procedure as above, install Ventoy to USB as GPT format. Extract and hook Ventoy folder in terminal ie: `cd /home/copypaste/Desktop/ventoy-1.0.84` then, `sudo sh ./Ventoy2Disk.sh -i -r 1500MB -g /dev/sdx`. `x` is your usb path. You may run/execute `VentoyGUI.x86_64` for Graphic user interface session.
   * Spare exactly the same space (1.5GB) to create extra EFI patition using [gparted](https://gparted.org/). Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Manage flags as `boot` & `esp`.
+  
+    ![Screenshot_20221206_201057](https://user-images.githubusercontent.com/72515939/205910901-6456de42-b739-493d-80ca-a0269c6d4388.png)
+  
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
   * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
   * Move `com.apple.recovery.boot` ([Online Recovery on Linux](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) exatcly at the same place where OpenCore `EFI` folder is located.
-  
-    ![Screenshot_20221206_201057](https://user-images.githubusercontent.com/72515939/205910901-6456de42-b739-493d-80ca-a0269c6d4388.png)
   
 * Both method will produce 3 partition:
   * VentoyEFI (Ventoy boot).
