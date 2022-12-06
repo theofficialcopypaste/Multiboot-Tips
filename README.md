@@ -27,17 +27,19 @@ This guide is not applicable to Bootcamp. Separate disk is encourage.
 * Why not macOS/Linux first? Windows GPT format installation is different from other operating systems. There are several reasons why the Windows installation starts first before other operating systems. The reason is:
   * Windows will share the EFI with other operating systems and cause an error if one of systems breaks.
   * Overwriting other operating system structure.
-  * And of course, **BSOD** 
+  * And of course, **BSOD**.
+  
+    ![Screenshot_20221206_202258](https://user-images.githubusercontent.com/72515939/205911607-0d9b12c9-d47a-4176-90bb-6a52971a9b41.png)
 
 #### Multiboot USB creation.
 
 * There are several tools that are suitable for multiboot purposes.
-  * [YUMI](https://www.pendrivelinux.com/yumi-multiboot-usb-creator/) is a suitable tool, however, using this tools require a lot of work. Hence, YUMI only support windows as platform.
+  * [YUMI](https://www.pendrivelinux.com/yumi-multiboot-usb-creator/) is a suitable tool. However, using this tools require a lot of work. Hence, YUMI only support windows as platform.
   * [Ventoy](https://www.ventoy.net/) is a free and open-source utility used for writing image files such as `.iso`, `.wim`, `.img`, `.vhd(x)`, and `.efi` files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the `.iso`, `.wim`, `.img`, `.img(x)`, or `.efi` files to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files. The great things is, this tools support Windows and Linux platform.
 
 * Method 1: Ventoy (Windows)
 
-  * First, create Ventoy USB as GPT format
+  * First, install Ventoy USB as GPT format.
   * Spare at least 1.5GB space for other purpose. In this case, we spare the space for OpenCore purpose.
   * After ventoy installation, format 1.5GB spare space using [DiskGenius](www.diskgenius.com) as ESP partition format. Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Marked partition as `boot` & `ESP`.
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
@@ -46,25 +48,29 @@ This guide is not applicable to Bootcamp. Separate disk is encourage.
 
 * Method 2: Ventoy (Linux)
 
-  * Same procedure as above, install Ventoy first using the same format as mention above. 
-  * Spare exactly the same space (1.5GB) to create extra EFI patition using [gparted](https://gparted.org/). Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Marked partition as `boot` & `ESP`.
+  * Same procedure as above, install Ventoy to USB as GPT format. Extract and hook Ventoy folder in terminal ie: `cd /home/copypaste/Desktop/ventoy-1.0.84` then, `sudo sh ./Ventoy2Disk.sh -i -r 1500MB -g /dev/sdx`. `x` is your usb path. You may run/execute `VentoyGUI.x86_64` for Graphic user interface session.
+  * Spare exactly the same space (1.5GB) to create extra EFI patition using [gparted](https://gparted.org/). Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Manage flags as `boot` & `esp`.
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
   * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
   * Move `com.apple.recovery.boot` ([Online Recovery on Linux](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) exatcly at the same place where OpenCore `EFI` folder is located.
+  
+    ![Screenshot_20221206_201057](https://user-images.githubusercontent.com/72515939/205910901-6456de42-b739-493d-80ca-a0269c6d4388.png)
   
 * Both method will produce 3 partition:
   * VentoyEFI (Ventoy boot).
   * Ventoy (Operating system `.iso`, `.img`, `.vhd` or etc) - `Windows`/`Linux`/`PE`.
   * OC (OpenCore boot) - Online Recovery, Basesystem.chunklist and BaseSystem.dmg.
+ 
+    ![Screenshot_20221206_201134](https://user-images.githubusercontent.com/72515939/205910872-75138e35-b8ad-4ccc-9fbf-b283e55f8640.png)
   
 * BIOS option
   * Choose the boot option from the boot screen. There will be two `UEFI` choices available from the `same USB`. You can select [Ventoy](https://www.ventoy.net/) to boot to any `.iso`, `.img`, `.vhd`, etc or boot from Opencore USB Partition (third partition), expand installation by press spacebar to boot macOS recovery from BaseSystem.dmg (OC partition)
   
-Below is an example:
+* Below is an example:
 
-![Settings_1](https://user-images.githubusercontent.com/72515939/205746086-d9bc7e87-f176-498b-8f7e-3d26c5adeae6.png)
-![Settings_2](https://user-images.githubusercontent.com/72515939/205746100-85bfd440-196b-441c-b86b-436561cb154c.png)
-![Settings_3](https://user-images.githubusercontent.com/72515939/205746111-53cdc7f2-3fa7-4e4e-abb2-53faf539befa.png)
+  ![Settings_1](https://user-images.githubusercontent.com/72515939/205746086-d9bc7e87-f176-498b-8f7e-3d26c5adeae6.png)  
+  ![Settings_2](https://user-images.githubusercontent.com/72515939/205746100-85bfd440-196b-441c-b86b-436561cb154c.png)  
+  ![Settings_3](https://user-images.githubusercontent.com/72515939/205746111-53cdc7f2-3fa7-4e4e-abb2-53faf539befa.png)
 
 ---
 
@@ -75,7 +81,7 @@ Below is an example:
   * to provide the device `on/enable` and `off/disable` (variable) functions for different operating systems
   * to prevent `BSOD` issues when booting into Windows.
 
-![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
+    ![With](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
 
 > **Note**: Additionally, combining SSDT with `_OSI` implementation + OpenCore quirks via `Kernel` > `Quirks` > `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` > `UpdateSMBIOSMode` = `Custom` is the best approach to multiboot. Refer [SSDT-EXTv2](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/SSDT/SSDT-EXTv2.dsl) as an example for `If _OSI ("Darwin")` implementation.
 
@@ -97,33 +103,33 @@ Below is an example:
   * Find File System `UUID`
   * Select `UUID` and hit `CMD` + `C` to copy the value
 
-![UUID](https://user-images.githubusercontent.com/72515939/202383431-9a3a26d5-a46b-4db6-be97-5f5ef0fe834b.png)
+    ![UUID](https://user-images.githubusercontent.com/72515939/202383431-9a3a26d5-a46b-4db6-be97-5f5ef0fe834b.png)
 
   * Open terminal, type `sudo vifs` and hit Enter
   * Press `o` to edit `/etc/fstab`.
   * Add `UUID="Volume UUID" none ntfs rw,noauto`. Below is an example:
-
-```zsh
-#
-# Warning - this file should only be modified with vifs(8)
-#
-# Failure to do so is unsupported and may be destructive.
-#
-UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto	// Windows
-UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none hfs rw,noauto	// macOS HFS+
-UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
-~
-~
-~
-```
+  
+    ```zsh
+    #
+    # Warning - this file should only be modified with vifs(8)
+    #
+    # Failure to do so is unsupported and may be destructive.
+    #
+    UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto	// Windows
+    UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none hfs rw,noauto	// macOS HFS+
+    UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
+    ~
+    ~
+    ~
+    ```
 
   * Hit `Esc` to stop editing and press `Shift` + `ZZ` (twice) to exit `vifs`.
   * Type `sudo automount -vc` to `reset` auto mounter
   * Restart PC.
 
-![UUID](https://user-images.githubusercontent.com/72515939/198338330-84c4f1bd-eb19-4709-b6d8-1ed3e88abd7e.png)
+    ![UUID](https://user-images.githubusercontent.com/72515939/198338330-84c4f1bd-eb19-4709-b6d8-1ed3e88abd7e.png)
 
-> **Note**: Using `vifs` is recommended by Apple. For Linux, storage with "ext4" and "btrfs" unmounts automatically. So, no need to worry about it. This method is not relevant for this format.
+  > **Note**: Using `vifs` is recommended by Apple. For Linux, storage with "ext4" and "btrfs" unmounts automatically. So, no need to worry about it. This method is not relevant for this format.
 
 ---
 
@@ -143,13 +149,13 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
   * Run Terminal
   * Drag the executable unix file disklabel (not the .exe) into the Terminal and hit Enter. Below is sample command to disk labeling:
 
-```zsh
--e "Arch" .disk_label .disk_label_2x
-```
+    ```zsh
+    -e "Arch" .disk_label .disk_label_2x
+    ```
 
   * Hit `Enter`
 
-> **Note**: The disk label file will be in the `home` folder, but it is hidden.
+  > **Note**: The disk label file will be in the `home` folder, but it is hidden.
 
 * Moving the files to the correct location
 
@@ -161,7 +167,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
     * Move the `.disk_label` and `.disk_label_x2` label files into the `EFI`/`boot`, which is the same path where `bootx64.efi` located.
   * Press "`cmd` + `shift` + `>`" again to mask the hidden files. Now, adjust `PickerAttributes` on your config.plist.
 
-![Settings](https://user-images.githubusercontent.com/72515939/205451151-2ab41327-dc53-489d-a2f0-0578331d2f77.png)
+    ![Settings](https://user-images.githubusercontent.com/72515939/205451151-2ab41327-dc53-489d-a2f0-0578331d2f77.png)
 
 * Adjusting PickerAttributes
 
@@ -186,17 +192,19 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 * Open [Hackintool](https://github.com/headkaze/Hackintool) and go to Utilities.
 
-![Utilities](https://user-images.githubusercontent.com/72515939/202380813-0753ac51-31ae-4ece-9b69-5830b13e3416.png)
+  ![Utilities](https://user-images.githubusercontent.com/72515939/202380813-0753ac51-31ae-4ece-9b69-5830b13e3416.png)
 
 * Click on below-center to generate** .reg** key to be used on Windows.
 
-![Utilities2](https://user-images.githubusercontent.com/72515939/202380902-3d2eb0c4-ed45-4154-9afd-4422febe224c.png)
+  ![Utilities2](https://user-images.githubusercontent.com/72515939/202380902-3d2eb0c4-ed45-4154-9afd-4422febe224c.png)
 
 * Registry key will be exported as:
+
   * [WinUTCOn.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOn.reg) - Install
   * [WinUTCOff.reg](https://github.com/theofficialcopypaste/Multiboot-Tips/blob/main/WinUTCOff.reg) - Uninstall
 
 * Boot to Windows.
+
   * Use `WinUTCOn.reg` to install and use `WinUTCOn.reg` to uninstall registry patches.
   * Reboot to macOS and Windows to make sure the clock is properly sync via UTC.
 
@@ -206,18 +214,18 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 
 - [**Acidanthera**](https://github.com/acidanthera) for
 
-```zsh
-git clone https://github.com/acidanthera/OpenCorePkg.git
-```
+  ```zsh
+  git clone https://github.com/acidanthera/OpenCorePkg.git
+  ```
 
 - [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) for
 
-```zsh
-git clone https://github.com/dortania/OpenCore-Install-Guide.git
-```
+  ```zsh
+  git clone https://github.com/dortania/OpenCore-Install-Guide.git
+  ```
 
 - [**benbaker76**](https://github.com/benbaker76) for
 
-```zsh
-https://github.com/benbaker76/Hackintool.git
-```
+  ```zsh
+  https://github.com/benbaker76/Hackintool.git
+  ```
