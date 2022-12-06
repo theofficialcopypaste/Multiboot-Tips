@@ -9,41 +9,57 @@
 - [UTC](https://github.com/theofficialcopypaste/Multiboot-Tips#utc)
 
 ---
+
 ### Multiboot USB Procedure
+
+This guide is not applicable to Bootcamp. Separate disk is encourage.
 
 #### Installation
 
-To perform multiboot install operating system, you need to consider one thing:
- * Which OS first to install?
- * What is current OS you have?
+* One thing needs to be kept in mind when doing a multiboot installation of an operating system:
+  * Which OS first to install?
+  * What is current OS you have?
   
-If your current OS is Windows, you may proceed to install macOS regularly as guided by Dortania. If Linux, same procedure. The problem is if you already has macOS installed. Windows will overwrite `EFI` partition if you not unplugged manually `SATA` or `NVME` which contain Linux and macOS in installation process.
+* The following is the operating system sequence for the multiboot process.
+  * **First**: Windows 
+  * **Second**: Linux/macOS or both
 
-#### What is the best procedure?
+* Why not macOS/Linux first? Windows GPT format installation is different from other operating systems. There are several reasons why the Windows installation starts first before other operating systems. The reason is:
+  * Windows will share the EFI with other operating systems and cause an error if one of systems breaks.
+  * Overwriting other operating system structure.
+  * And of course, **BSOD** 
 
-The best way is to install Windows first since macOS and Linux don't overwrite `EFI` partition. This methos is not applicable to Bootcamp. Separate disk is encourage.
+#### Multiboot USB creation.
 
-#### Multiple USB Installation creation.
+* There are several tools that are suitable for multiboot purposes.
+  * [YUMI](https://www.pendrivelinux.com/yumi-multiboot-usb-creator/) is a suitable tool, however, using this tools require a lot of work. Hence, YUMI only support windows as platform.
+  * [Ventoy](https://www.ventoy.net/) is a free and open-source utility used for writing image files such as `.iso`, `.wim`, `.img`, `.vhd(x)`, and `.efi` files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the `.iso`, `.wim`, `.img`, `.img(x)`, or `.efi` files to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files. The great things is, this tools support Windows and Linux platform.
 
-Using Ventoy as multiboot installation tool is great alternative to prevent an issue. There is a way to combine all operating system (Windows / Linux / macOS). To create this tools, make sure you have Windows and Linux as current operating system before you are doing fresh install.
+* Method 1: Ventoy (Windows)
 
-#### Ventoy (Windows)
+  * First, create Ventoy USB as GPT format
+  * Spare at least 1.5GB space for other purpose. In this case, we spare the space for OpenCore purpose.
+  * After ventoy installation, format 1.5GB spare space using [DiskGenius](www.diskgenius.com) as ESP partition format. Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Marked partition as `boot` & `ESP`.
+  * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
+  * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
+  * Move `com.apple.recovery.boot` ([Online Recovery on Windows](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer-in-windows)) exatcly at the same place where OpenCore `EFI` folder is located.
 
-* First, create Ventoy USB as GPT format
-* Spare at least 1.5GB space for other purpose. In this case, we spare the space for OpenCore purpose.
-* After ventoy installation, format 1.5GB spare space using DiskGenius as ESP partition format. Usually this will format the space as fat32.
+* Method 2: Ventoy (Linux)
 
-#### Ventoy (Linux)
-
-* Same procedure as above, install Ventoy first using the same format as mention above. 
-* Spare exactly the same space (1.5GB) to create extra EFI patition using gparted.
-
-#### Moving the file
-
-* Just move other operating system to the drive name Ventoy (Linux / Windows)
-* Move openCore `EFI` folder to pare 1.5GB extra EFI partition.
-* Move `com.apple.recovery.boot` exatcly at the same place where OpenCore `EFI` folder is located.
-
+  * Same procedure as above, install Ventoy first using the same format as mention above. 
+  * Spare exactly the same space (1.5GB) to create extra EFI patition using [gparted](https://gparted.org/). Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Marked partition as `boot` & `ESP`.
+  * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
+  * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
+  * Move `com.apple.recovery.boot` ([Online Recovery on Linux](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) exatcly at the same place where OpenCore `EFI` folder is located.
+  
+* Both method will produce 3 partition:
+  * VentoyEFI (Ventoy boot).
+  * Ventoy (Operating system `.iso`, `.img`, `.vhd` or etc) - `Windows`/`Linux`/`PE`.
+  * OC (OpenCore boot) - Online Recovery, Basesystem.chunklist and BaseSystem.dmg.
+  
+* BIOS option
+  * Choose the boot option from the boot screen. There will be two `UEFI` choices available from the `same USB`. You can select [Ventoy](https://www.ventoy.net/) to boot to any `.iso`, `.img`, `.vhd`, etc or boot from Opencore USB Partition (third partition), expand installation by press spacebar to boot macOS recovery from BaseSystem.dmg (OC partition)
+  
 Below is an example:
 
 ![Settings_1](https://user-images.githubusercontent.com/72515939/205746086-d9bc7e87-f176-498b-8f7e-3d26c5adeae6.png)
@@ -72,9 +88,9 @@ The ACPI interface is not too complex for Linux. To resolve operating system iss
 Always mounting non-supported storage may:
 
 - shorten the storage lifespan.
-- cause read / write error.
+- cause read/write error.
 
-This solution prevents the mac's automatically mounting the NTFS file format by utilizing `fstab` and `vifs`. The `fstab` is designed to ease the burden of mounting and unmounting file systems to a machine. The tools is a set of rules used to control how different filesystems are treated each time they are introduced to a system. It is allows the user to avoid load order errors that could eat up valuable time and energy. While `vifs`, is a utility to safely edit the `etc` / `fstab` file configuration file. It is actually from the fact that we are using the text editor `vi` to change our file.
+This solution prevents the mac's automatically mounting the NTFS file format by utilizing `fstab` and `vifs`. The `fstab` is designed to ease the burden of mounting and unmounting file systems to a machine. The tools is a set of rules used to control how different filesystems are treated each time they are introduced to a system. It is allows the user to avoid load order errors that could eat up valuable time and energy. While `vifs`, is a utility to safely edit the `etc`/`fstab` file configuration file. It is actually from the fact that we are using the text editor `vi` to change our file.
 
 > **Note**: `vim` and `nano` are two programmes that are quite similar to vifs.
 
@@ -126,7 +142,7 @@ UUID=FF9DBDC4-F77F-3F72-A6C2-26676F39B7CE none apfs rw,noauto	// macOS APFS
 Labeling can be done via macOS by:
 
 - Download the latest [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases) and unzip it
-- Find `Utilities` / `disklabel` (unix executable file) inside OpenCore folder
+- Find `Utilities`/`disklabel` (unix executable file) inside OpenCore folder
 - Run Terminal
 - Drag the executable unix file disklabel (not the .exe) into the Terminal and hit Enter. Below is sample command to disk labeling:
 
@@ -143,9 +159,9 @@ Labeling can be done via macOS by:
 - Use Finder, got to your Home Folder.
 - Press "`cmd` + `shift` + `>`" to display hidden files. The process before should dumped copy of `.disk_label` and `.disk_label_x2`.
 - Windows :
-  - Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft` / `Boot` folder, the same path where `bootx64.efi` located.
+  - Move the `.disk_label` and `.disk_label_x2` label files into the `Microsoft`/`Boot` folder, the same path where `bootx64.efi` located.
 - Linux :
-  - Move the `.disk_label` and `.disk_label_x2` label files into the `EFI` / `boot`, which is the same path where `bootx64.efi` located.
+  - Move the `.disk_label` and `.disk_label_x2` label files into the `EFI`/`boot`, which is the same path where `bootx64.efi` located.
 - Press "`cmd` + `shift` + `>`" again to mask the hidden files. Now, adjust `PickerAttributes` on your config.plist.
 
 ![Settings](https://user-images.githubusercontent.com/72515939/205451151-2ab41327-dc53-489d-a2f0-0578331d2f77.png)
