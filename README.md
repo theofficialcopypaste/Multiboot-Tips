@@ -65,7 +65,7 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
 * Both method will produce 3 partition:
   * VentoyEFI (Ventoy boot).
   * Ventoy (Operating system `.iso`, `.img`, `.vhd` or etc) - `Windows`/`Linux`/`PE`.
-  * OC (OpenCore boot) - Online Recovery, Basesystem.chunklist and BaseSystem.dmg.
+  * Install (OpenCore boot) - `com.apple.recovery.boot`
   
 * BIOS option
   * Choose the boot option from the boot screen. There will be two `UEFI` choices available from the `same USB`. You can select [Ventoy](https://www.ventoy.net/) to boot to mosts `.iso`, `.img`, `.vhd` and etc.
