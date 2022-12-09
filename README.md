@@ -47,6 +47,8 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
   * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
   * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer-in-windows)) exatcly at the same place where OpenCore `EFI` folder is located.
+  
+    ![Capture](https://user-images.githubusercontent.com/72515939/206798635-6758fdc7-3988-4dd4-bdf3-d193d5648be1.PNG)
 
 * Method 2: Ventoy (Linux)
 
