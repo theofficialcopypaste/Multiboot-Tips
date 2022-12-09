@@ -180,7 +180,7 @@ Solution to fix clock for macOS and Windows
 
 If you work across time zones, it's important to understand UTC. UTC is the standard of time used all around the world to
 - Regulate clocks and...
-- Effectively the "center" of our timekeeping.
+- Effectively the `center` of our timekeeping.
 
 ##### Solution
 
