@@ -43,23 +43,24 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
 
   * First, install Ventoy USB as GPT format.
   * Spare at least 1.5GB space for other purpose. In this case, we spare the space for OpenCore purpose.
-  * After ventoy installation, format 1.5GB spare space using [DiskGenius](www.diskgenius.com) as ESP partition format. Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Marked partition as `boot` & `ESP`.
+  * After ventoy installation, format 1.5GB spare space using [DiskGenius](www.diskgenius.com) as ESP partition format. Usually this will format the space as fat32. Rename partition as `Install`. Marked partition as `boot` & `ESP`.
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
-  * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
-  * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer-in-windows)) exatcly at the same place where OpenCore `EFI` folder is located.
+  * Create OpenCore fat32 `.iso` or `.img` (+R/W support), rename as `OpenCore` which contain OpenCore `EFI` and move the image to Ventoy. 
+  * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#making-the-installer-in-windows)) to extra 1.5GB partition
   
     ![Capture](https://user-images.githubusercontent.com/72515939/206798635-6758fdc7-3988-4dd4-bdf3-d193d5648be1.PNG)
 
 * Method 2: Ventoy (Linux)
 
   * Same procedure as above, install Ventoy to USB as GPT format. Extract and hook Ventoy folder in terminal ie: `cd /home/copypaste/Desktop/ventoy-1.0.84` then, `sudo sh ./Ventoy2Disk.sh -i -r 1500MB -g /dev/sdx`. `x` is your usb path. You may run/execute `VentoyGUI.x86_64` for Graphic user interface session.
-  * Spare exactly the same space (1.5GB) to create extra EFI patition using [gparted](https://gparted.org/). Usually this will format the space as fat32. Rename partition as `OpenCore`, label as `OC`. Manage flags as `boot` & `esp`.
+  * Spare at least 1.5GB space for other purpose. In this case, we spare the space for OpenCore purpose.
+  * Create extra EFI patition using [gparted](https://gparted.org/). Usually this will format the space as fat32. Rename partition as `Install`. Manage flags as `boot` & `esp`.
   
     ![Screenshot_20221206_201057](https://user-images.githubusercontent.com/72515939/205910901-6456de42-b739-493d-80ca-a0269c6d4388.png)
   
   * Just move other operating system `.iso`, `.img`, `.vhd` or etc to the drive named Ventoy.
-  * Move OpenCore `EFI` folder to pare 1.5GB extra EFI partition.
-  * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) exatcly at the same place where OpenCore `EFI` folder is located.
+  * Create OpenCore fat32 `.iso` or `.img` (+R/W support), rename as `OpenCore` which contain OpenCore `EFI` and move the image to Ventoy. 
+  * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) to extra 1.5GB partition.
   
 * Both method will produce 3 partition:
   * VentoyEFI (Ventoy boot).
@@ -73,9 +74,9 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
   
 * Below is an example:
 
-  ![Settings_1](https://user-images.githubusercontent.com/72515939/205746086-d9bc7e87-f176-498b-8f7e-3d26c5adeae6.png)  
-  ![Settings_2](https://user-images.githubusercontent.com/72515939/205746100-85bfd440-196b-441c-b86b-436561cb154c.png)  
-  ![Settings_3](https://user-images.githubusercontent.com/72515939/205746111-53cdc7f2-3fa7-4e4e-abb2-53faf539befa.png)
+  ![2022-12-10_07-27-16](https://user-images.githubusercontent.com/72515939/206811501-fa5b5e09-f2dd-40a8-8702-95813cfb06e1.png)
+  
+  > **Note**: Boot Ventoy USB and select OpenCore.iso or OpenCore.img. Wfter OpenCore booting, press `spacebar` to reveal macOS online recovery. In this case ie: `Install` (dmg).
 
 ---
 
