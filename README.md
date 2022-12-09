@@ -188,7 +188,7 @@ Open [Hackintool](https://github.com/headkaze/Hackintool) and go to Utilities.
 
 ![Utilities](https://user-images.githubusercontent.com/72515939/202380813-0753ac51-31ae-4ece-9b69-5830b13e3416.png)
 
-Click on below-center to generate `.reg` key to be used on Windows.
+Click on multiple-square icon to generate `.reg` key to be used on Windows.
 
 ![Utilities2](https://user-images.githubusercontent.com/72515939/202380902-3d2eb0c4-ed45-4154-9afd-4422febe224c.png)
 
