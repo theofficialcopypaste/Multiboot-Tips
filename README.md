@@ -63,9 +63,9 @@ This guide is not applicable to **Bootcamp**. Separate disk is encourage.
   * Move `com.apple.recovery.boot` ([macOS online Recovery](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#making-the-installer-in-linux)) to extra 1.5GB partition.
   
 * Both method will produce 3 partition:
-  * VentoyEFI (Ventoy boot).
-  * Ventoy (Operating system `.iso`, `.img`, `.vhd` or etc) - `Windows`/`Linux`/`PE`.
-  * Install (OpenCore boot) - `com.apple.recovery.boot`
+  * VentoyEFI - boot
+  * Ventoy - OS `.iso`, `.img`, `.vhd` or etc
+  * Install - com.apple.recovery.boot)
   
 * BIOS option
   * Choose the boot option from the boot screen. There will be two `UEFI` choices available from the `same USB`. You can select [Ventoy](https://www.ventoy.net/) to boot to mosts `.iso`, `.img`, `.vhd` and etc.
