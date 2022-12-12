@@ -1,5 +1,13 @@
 # Hackintosh Multiboot Tips
 
+![OpenCore](https://img.shields.io/badge/Bootloader-OpenCore-purple)
+![OS](https://img.shields.io/badge/OS1-Linux-white)
+![OS](https://img.shields.io/badge/OS2-Windows-blue)
+![OS](https://img.shields.io/badge/OS3-macOS-orange)
+![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
+![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
+![Information](https://img.shields.io/badge/Information-Guide-yellow)
+
 **Table of Contents**
 
 [Multiboot USB Procedure](https://github.com/theofficialcopypaste/Multiboot-Tips#multiboot-usb-procedure) | [Prevent ACPI infusion on other operating systems](https://github.com/theofficialcopypaste/Multiboot-Tips#prevent-acpi-infusion-on-other-operating-systems) | [Unmount non-supported storage formats automatically](https://github.com/theofficialcopypaste/Multiboot-Tips#unmount-non-supported-storage-formats-automatically) | [Changing other OS label](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-other-os-label) | [UTC](https://github.com/theofficialcopypaste/Multiboot-Tips#utc)
@@ -7,8 +15,6 @@
 ---
 
 ### Multiboot USB Procedure
-
-![Screenshot_20221206_205233](https://user-images.githubusercontent.com/72515939/205917851-459df871-e66b-4fec-ae92-07f1bc2a5bba.png)
 
 This guide is not applicable to **Bootcamp**. Separate disk is encourage.
 
