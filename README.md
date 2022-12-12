@@ -65,7 +65,7 @@ There are several tools that are suitable for multiboot purposes.
    0:      GUID_partition_scheme                        *7.7 GB     disk6
    1:       Microsoft Basic Data ⁨Ventoy⁩                  6.6 GB     disk6s1
    2:       Microsoft Basic Data ⁨VTOYEFI⁩                 33.6 MB    disk6s2
-   3:                        EFI ⁨OC⁩                      1.1 GB     disk6s3
+   3:                        EFI Install                 1.1 GB     disk6s3
 ```
   
 **BIOS option**
