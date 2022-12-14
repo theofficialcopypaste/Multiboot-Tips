@@ -10,7 +10,7 @@
 
 **Table of Contents**
 
-[Multiboot USB Procedure](https://github.com/theofficialcopypaste/Multiboot-Tips#multiboot-usb-procedure) | [Prevent ACPI infusion on other operating systems](https://github.com/theofficialcopypaste/Multiboot-Tips#prevent-acpi-infusion-on-other-operating-systems) | [Unmount non-supported storage formats automatically](https://github.com/theofficialcopypaste/Multiboot-Tips#unmount-non-supported-storage-formats-automatically) | [Changing other OS label](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-other-os-label) | [UTC](https://github.com/theofficialcopypaste/Multiboot-Tips#utc)
+[Multiboot USB Procedure](https://github.com/theofficialcopypaste/Multiboot-Tips#multiboot-usb-procedure) | [Prevent ACPI infusion on other operating systems](https://github.com/theofficialcopypaste/Multiboot-Tips#prevent-acpi-infusion-on-other-operating-systems) | [Unmount non-supported storage formats automatically](https://github.com/theofficialcopypaste/Multiboot-Tips#unmount-non-supported-storage-formats-automatically) | [Changing other OS label](https://github.com/theofficialcopypaste/Multiboot-Tips#changing-other-os-label) | [UTC](https://github.com/theofficialcopypaste/Multiboot-Tips#utc) | [Credits](https://github.com/theofficialcopypaste/Multiboot-Tips#credits)
 
 ---
 
@@ -208,6 +208,6 @@ Boot to Windows.
 
 ---
 
-### Acknowledgement
+### Credits
 
 [**Acidanthera**](https://github.com/acidanthera) | [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) | [**benbaker76**](https://github.com/benbaker76)
